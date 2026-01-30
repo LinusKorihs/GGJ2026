@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   _actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _ownRigidbody: {fileID: 1216452089280032341}
+  _moveSpeed: 10
 --- !u!50 &1216452089280032341
 Rigidbody2D:
   serializedVersion: 5
