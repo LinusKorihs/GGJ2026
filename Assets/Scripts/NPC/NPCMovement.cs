@@ -50,9 +50,6 @@ public class NPCMovement : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        int npcLayer = LayerMask.NameToLayer("NPC");
-        Physics2D.IgnoreLayerCollision(npcLayer, npcLayer, true);
-
         // Start room: find closest waypoint you are allowed to use
         var startWp = GetClosestAllowedWaypoint(transform.position);
         currentRoomId = startWp != null ? startWp.roomId : "";
@@ -99,9 +96,7 @@ public class NPCMovement : MonoBehaviour
             return;
         }
 
-        var toTarget = (Vector2)currentTarget.transform.position - rb.position;
-
-        if (toTarget.magnitude <= arriveDistance)
+        if (!agent.pathPending && agent.remainingDistance <= arriveDistance)
         {
             agent.ResetPath();
 
