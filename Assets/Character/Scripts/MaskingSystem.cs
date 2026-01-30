@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +29,12 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     [Header("Technical Stuff - Dont touch")]
     [SerializeField] LayerMask _validLayerForCollision;
+    [SerializeField]
+    MaskingMinigame _maskingMinigame;
 
+    Coroutine _minigameCoroutine;
+
+    bool _maskingMinigameRunning = false;
 
 
 
@@ -120,16 +126,69 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     #region MaskStealing
 
-    public bool TryMaskStealing()
+    public void TryMaskStealing()
     {
-        //minigame
-        if (true)
+        //if we cant steal, dont let him try
+        if (!CanStealMask)
         {
-            EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
-            return true;
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
         }
-        else
-            return false;
+
+
+        //early out if coroutine is already running. Should prevent double usage!
+        if (_minigameCoroutine != null)
+        {
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
+        }
+
+        _minigameCoroutine = StartCoroutine(StartMinigame());
+
+
+        // need callback here
+
+        // //TESTING
+        // StartCoroutine("DelayEndMinigame");
+
+        // if (true)
+        // {
+        //     EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
+        //     return true;
+        // }
+        // else
+        //     //TESTING
+        //     return false;
+    }
+
+    IEnumerator StartMinigame()
+    {
+        //register event finish callback before we start the event // starts listening
+        _maskingMinigame.OnEventFinished += MinigameFinishedCallback;
+        _maskingMinigame.StartStealingMinigame(_currentTarget);
+        _maskingMinigameRunning = true;
+
+        //will run forever until we get the callback. Non blocking though since its coroutine
+        while (_maskingMinigameRunning)
+        {
+            yield return null;
+        }
+
+        //register event finish callback before after the event is done // stop listening
+        _maskingMinigame.OnEventFinished -= MinigameFinishedCallback;
+        _maskingMinigame.EndMinigame();
+        _minigameCoroutine = null;
+    }
+
+    void MinigameFinishedCallback()
+    {
+        _maskingMinigameRunning = false;
+    }
+
+
+    IEnumerator DelayEndMinigame()
+    {
+        yield return new WaitForSeconds(5f);
     }
 
     public void EquipMask(MaskData mask)
