@@ -114,6 +114,22 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        GameManager.Instance.NPCTimeChanged += adjustSpeed;
+    }
+
+    private void adjustSpeed(float speed)
+    {
+        agent.speed = moveSpeed * speed;
+        if (debugLogs) Debug.Log($"{name} adjusted speed to {agent.speed} due to NPCTime change");
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.NPCTimeChanged -= adjustSpeed;
+    }
+
     private void ApplyForcedStateIfAny()
     {
         if (forceStationary && forceMoving)
@@ -178,7 +194,8 @@ public class NPCMovement : MonoBehaviour
         }
         currentTarget = candidates[Random.Range(0, candidates.Count)];
         currentRoomId = currentTarget.roomId;
-        agent.speed = moveSpeed;
+        agent.speed = moveSpeed * GameManager.Instance.NPCTime;
+
 
         if (!agent.isOnNavMesh)
         {
