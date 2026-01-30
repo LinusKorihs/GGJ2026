@@ -186,7 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &40310430
 NavMeshAgent:
@@ -197,7 +197,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 40310428}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -209,7 +209,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &40310431
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -411,7 +411,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &42779418
 NavMeshAgent:
@@ -422,7 +422,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 42779416}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -434,7 +434,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &42779419
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &71653125
 NavMeshAgent:
@@ -741,7 +741,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 71653123}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -753,7 +753,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &71653126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1063,7 +1063,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &140520640
 NavMeshAgent:
@@ -1074,7 +1074,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 140520638}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1086,7 +1086,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &140520641
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1301,6 +1301,79 @@ MonoBehaviour:
   roomId: 1
   guest: 1
   waiter: 1
+--- !u!1 &176600740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176600741}
+  m_Layer: 0
+  m_Name: Test NPCs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &176600741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176600740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 71653124}
+  - {fileID: 470329694}
+  - {fileID: 1782785548}
+  - {fileID: 455107577}
+  - {fileID: 743866472}
+  - {fileID: 1459894050}
+  - {fileID: 1936743508}
+  - {fileID: 1383901091}
+  - {fileID: 1065915427}
+  - {fileID: 1262353834}
+  - {fileID: 2001394931}
+  - {fileID: 1936969053}
+  - {fileID: 713804110}
+  - {fileID: 1927922759}
+  - {fileID: 1898885731}
+  - {fileID: 1822859489}
+  - {fileID: 1916097024}
+  - {fileID: 232899758}
+  - {fileID: 843442717}
+  - {fileID: 2145135148}
+  - {fileID: 1377155026}
+  - {fileID: 277214171}
+  - {fileID: 474624968}
+  - {fileID: 2017115100}
+  - {fileID: 1899396256}
+  - {fileID: 356720661}
+  - {fileID: 42779417}
+  - {fileID: 140520639}
+  - {fileID: 837468029}
+  - {fileID: 184785783}
+  - {fileID: 916953123}
+  - {fileID: 382070490}
+  - {fileID: 40310429}
+  - {fileID: 1451060365}
+  - {fileID: 271982230}
+  - {fileID: 923039304}
+  - {fileID: 502871778}
+  - {fileID: 1969646947}
+  - {fileID: 1586443082}
+  - {fileID: 355986462}
+  - {fileID: 1378306574}
+  - {fileID: 1681522542}
+  m_Father: {fileID: 363336990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184785782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &184785784
 NavMeshAgent:
@@ -1346,7 +1419,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 184785782}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1358,7 +1431,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &184785785
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1708,7 +1781,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 208563202}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1720,7 +1793,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &208563205
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1918,7 +1991,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 232360461}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1930,7 +2003,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &232360463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2147,7 +2220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &232899759
 NavMeshAgent:
@@ -2158,7 +2231,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 232899757}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2170,7 +2243,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &232899760
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2372,7 +2445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &271982231
 NavMeshAgent:
@@ -2383,7 +2456,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 271982229}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2395,7 +2468,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &271982232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2597,7 +2670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &277214172
 NavMeshAgent:
@@ -2608,7 +2681,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 277214170}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2620,7 +2693,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &277214173
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2859,7 +2932,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &355986463
 NavMeshAgent:
@@ -2870,7 +2943,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 355986461}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2882,7 +2955,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &355986464
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3084,7 +3157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &356720662
 NavMeshAgent:
@@ -3095,7 +3168,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 356720660}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3107,7 +3180,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &356720663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3307,48 +3380,7 @@ Transform:
   - {fileID: 1540319999}
   - {fileID: 1169162405}
   - {fileID: 1985528187}
-  - {fileID: 71653124}
-  - {fileID: 470329694}
-  - {fileID: 1782785548}
-  - {fileID: 455107577}
-  - {fileID: 743866472}
-  - {fileID: 1459894050}
-  - {fileID: 1936743508}
-  - {fileID: 1383901091}
-  - {fileID: 1065915427}
-  - {fileID: 1262353834}
-  - {fileID: 2001394931}
-  - {fileID: 1936969053}
-  - {fileID: 713804110}
-  - {fileID: 1927922759}
-  - {fileID: 1898885731}
-  - {fileID: 1822859489}
-  - {fileID: 1916097024}
-  - {fileID: 232899758}
-  - {fileID: 843442717}
-  - {fileID: 2145135148}
-  - {fileID: 1377155026}
-  - {fileID: 277214171}
-  - {fileID: 474624968}
-  - {fileID: 2017115100}
-  - {fileID: 1899396256}
-  - {fileID: 356720661}
-  - {fileID: 42779417}
-  - {fileID: 140520639}
-  - {fileID: 837468029}
-  - {fileID: 184785783}
-  - {fileID: 916953123}
-  - {fileID: 382070490}
-  - {fileID: 40310429}
-  - {fileID: 1451060365}
-  - {fileID: 271982230}
-  - {fileID: 923039304}
-  - {fileID: 502871778}
-  - {fileID: 1969646947}
-  - {fileID: 1586443082}
-  - {fileID: 355986462}
-  - {fileID: 1378306574}
-  - {fileID: 1681522542}
+  - {fileID: 176600741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382070489
@@ -3385,7 +3417,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &382070491
 NavMeshAgent:
@@ -3396,7 +3428,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 382070489}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3408,7 +3440,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &382070492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3657,7 +3689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &455107578
 NavMeshAgent:
@@ -3668,7 +3700,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 455107576}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3680,7 +3712,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &455107579
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3882,7 +3914,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &470329695
 NavMeshAgent:
@@ -3893,7 +3925,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 470329693}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3905,7 +3937,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &470329696
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4107,7 +4139,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &474624969
 NavMeshAgent:
@@ -4118,7 +4150,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 474624967}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4130,7 +4162,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &474624970
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4332,7 +4364,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &502871779
 NavMeshAgent:
@@ -4343,7 +4375,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 502871777}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4355,7 +4387,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &502871780
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4651,7 +4683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &713804111
 NavMeshAgent:
@@ -4662,7 +4694,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 713804109}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4674,7 +4706,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &713804112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4923,7 +4955,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &743866473
 NavMeshAgent:
@@ -4934,7 +4966,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 743866471}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4946,7 +4978,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &743866474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5279,7 +5311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &837468030
 NavMeshAgent:
@@ -5290,7 +5322,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 837468028}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -5302,7 +5334,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &837468031
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5504,7 +5536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &843442718
 NavMeshAgent:
@@ -5515,7 +5547,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 843442716}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -5527,7 +5559,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &843442719
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5838,7 +5870,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &916953124
 NavMeshAgent:
@@ -5849,7 +5881,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 916953122}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -5861,7 +5893,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &916953125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6063,7 +6095,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &923039305
 NavMeshAgent:
@@ -6074,7 +6106,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 923039303}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -6086,7 +6118,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &923039306
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6673,7 +6705,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 995213920}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -6685,7 +6717,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &995213923
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6934,7 +6966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1065915428
 NavMeshAgent:
@@ -6945,7 +6977,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1065915426}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -6957,7 +6989,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1065915429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7265,7 +7297,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1189918136}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7277,7 +7309,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1189918139
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7537,7 +7569,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1259637062}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7549,7 +7581,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1259637065
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7751,7 +7783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1262353835
 NavMeshAgent:
@@ -7762,7 +7794,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1262353833}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7774,7 +7806,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1262353836
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7976,7 +8008,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1377155027
 NavMeshAgent:
@@ -7987,7 +8019,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1377155025}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7999,7 +8031,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1377155028
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8201,7 +8233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1378306575
 NavMeshAgent:
@@ -8212,7 +8244,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1378306573}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -8224,7 +8256,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1378306576
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8426,7 +8458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1383901092
 NavMeshAgent:
@@ -8437,7 +8469,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1383901090}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -8449,7 +8481,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1383901093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8662,7 +8694,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1409140341}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -8674,7 +8706,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1409140344
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8876,7 +8908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1451060366
 NavMeshAgent:
@@ -8887,7 +8919,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1451060364}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -8899,7 +8931,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1451060367
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9101,7 +9133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1459894051
 NavMeshAgent:
@@ -9112,7 +9144,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1459894049}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -9124,7 +9156,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1459894052
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9667,7 +9699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1586443083
 NavMeshAgent:
@@ -9678,7 +9710,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1586443081}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -9690,7 +9722,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1586443084
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9892,7 +9924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1681522543
 NavMeshAgent:
@@ -9903,7 +9935,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1681522541}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -9915,7 +9947,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1681522544
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10117,7 +10149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1782785549
 NavMeshAgent:
@@ -10128,7 +10160,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1782785547}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -10140,7 +10172,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1782785550
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10342,7 +10374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1822859490
 NavMeshAgent:
@@ -10353,7 +10385,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1822859488}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -10365,7 +10397,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1822859491
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10544,6 +10576,7 @@ GameObject:
   - component: {fileID: 1835741194}
   - component: {fileID: 1835741195}
   - component: {fileID: 1835741196}
+  - component: {fileID: 1835741197}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -10641,6 +10674,22 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!208 &1835741197
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835741193}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.6, y: 0.525, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1877045283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10712,7 +10761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1898885732
 NavMeshAgent:
@@ -10723,7 +10772,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1898885730}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -10735,7 +10784,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1898885733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10937,7 +10986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1899396257
 NavMeshAgent:
@@ -10948,7 +10997,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1899396255}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -10960,7 +11009,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1899396258
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11209,7 +11258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1916097025
 NavMeshAgent:
@@ -11220,7 +11269,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1916097023}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -11232,7 +11281,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1916097026
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11434,7 +11483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1927922760
 NavMeshAgent:
@@ -11445,7 +11494,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1927922758}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -11457,7 +11506,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1927922761
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11659,7 +11708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1936743509
 NavMeshAgent:
@@ -11670,7 +11719,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1936743507}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -11682,7 +11731,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1936743510
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11884,7 +11933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1936969054
 NavMeshAgent:
@@ -11895,7 +11944,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1936969052}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -11907,7 +11956,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1936969055
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12109,7 +12158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1969646948
 NavMeshAgent:
@@ -12120,7 +12169,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1969646946}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -12132,7 +12181,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &1969646949
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12547,7 +12596,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &2001394932
 NavMeshAgent:
@@ -12558,7 +12607,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2001394930}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -12570,7 +12619,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &2001394933
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12772,7 +12821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &2017115101
 NavMeshAgent:
@@ -12783,7 +12832,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2017115099}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -12795,7 +12844,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &2017115102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13055,7 +13104,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2093560716}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -13067,7 +13116,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &2093560719
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13280,7 +13329,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2120695591}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -13292,7 +13341,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &2120695594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13527,7 +13576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 363336990}
+  m_Father: {fileID: 176600741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &2145135149
 NavMeshAgent:
@@ -13538,7 +13587,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2145135147}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -13550,7 +13599,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!58 &2145135150
 CircleCollider2D:
   m_ObjectHideFlags: 0
