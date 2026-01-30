@@ -24,7 +24,6 @@ public class CharacterControllerScript : MonoBehaviour
 
 
     bool _inputsLocked = false;
-    bool _inMinigame = false;
     int _lockCount =0;
 
 
@@ -65,12 +64,6 @@ public class CharacterControllerScript : MonoBehaviour
         _lockCount--;
         if(_lockCount <= 0)
         _inputsLocked = false;
-    }
-
-    public void MinigameFinished()
-    {
-        _characterVisual.UpdateCharacterSprite(_maskingSystem.CurrentMask.maskSprite);
-        UnlockControls();
     }
 
     private void OnUseAction(InputAction.CallbackContext context)
@@ -133,7 +126,6 @@ public class CharacterControllerScript : MonoBehaviour
         if (oldDirection != (int)_characterDirection)
             _characterVisual.SetCharacterDirection(_characterDirection);
     }
-
 
     public void SetCharacterSprite(Sprite sprite)
     {

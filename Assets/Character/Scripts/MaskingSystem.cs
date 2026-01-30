@@ -144,27 +144,12 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         }
 
         _minigameCoroutine = StartCoroutine(StartMinigame());
-
-
-        // need callback here
-
-        // //TESTING
-        // StartCoroutine("DelayEndMinigame");
-
-        // if (true)
-        // {
-        //     EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
-        //     return true;
-        // }
-        // else
-        //     //TESTING
-        //     return false;
     }
 
     IEnumerator StartMinigame()
     {
         //register event finish callback before we start the event // starts listening
-        _maskingMinigame.OnEventFinished += MinigameFinishedCallback;
+        _maskingMinigame.OnEventFinishedSuccessful += MinigameFinishedCallback;
         _maskingMinigame.StartStealingMinigame(_currentTarget);
         _maskingMinigameRunning = true;
 
@@ -175,21 +160,25 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         }
 
         //register event finish callback before after the event is done // stop listening
-        _maskingMinigame.OnEventFinished -= MinigameFinishedCallback;
-        _maskingMinigame.EndMinigame();
+        _maskingMinigame.OnEventFinishedSuccessful -= MinigameFinishedCallback;
         _minigameCoroutine = null;
     }
 
-    void MinigameFinishedCallback()
+    void MinigameFinishedCallback(bool success)
     {
-        _maskingMinigameRunning = false;
+        if (success)
+        {
+            _maskingMinigameRunning = false;
+            EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            CharacterControllerScript.Instance.UnlockControls();
+        }
+        else
+        {
+            // TODO logic
+            ;
+        }
     }
 
-
-    IEnumerator DelayEndMinigame()
-    {
-        yield return new WaitForSeconds(5f);
-    }
 
     public void EquipMask(MaskData mask)
     {
@@ -199,6 +188,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     void ApplyMaskEffects(MaskData mask)
     {
+        CharacterControllerScript.Instance.SetCharacterSprite(CurrentMask.maskSprite);
         _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
     }
 

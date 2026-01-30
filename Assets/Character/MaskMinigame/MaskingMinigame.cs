@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class MaskingMinigame : MonoBehaviour
@@ -7,10 +8,12 @@ public class MaskingMinigame : MonoBehaviour
     [SerializeField] GameObject _minigameCamera;
     [SerializeField] GameObject _maskingMinigameObject;
 
-    public Action OnEventFinished;
+    public Action<bool> OnEventFinishedSuccessful;
 
     //hardcoded offset, so the camera dont just sit on the object
     Vector3 _cameraOffset = new Vector3(0f, 0f, -10f);
+
+    bool _eventActive = false;
 
     void Awake()
     {
@@ -31,26 +34,42 @@ public class MaskingMinigame : MonoBehaviour
         _minigameCamera.SetActive(true);
         _maskingMinigameObject.SetActive(true);
         _minigameCamera.transform.position = target.transform.position + _cameraOffset;
+        GameManager.Instance.SlowSpeed();
     }
 
     public IEnumerator RunEvent()
     {
-        bool eventActive = true;
-        while (eventActive)
-        {
+        _eventActive = true;
+        StartCoroutine(DelayedEventFinish());
 
+        while (_eventActive)
+        {
             yield return null;
+
+            // minigame logic
         }
 
-        OnEventFinished?.Invoke();
+
+
+        // fail / success fork
         EndMinigame();
+    }
+
+
+    IEnumerator DelayedEventFinish()
+    {
+        yield return new WaitForSeconds(2.0f);
+        _eventActive = false;
     }
 
     public void EndMinigame()
     {
         _minigameCamera.SetActive(false);
         _maskingMinigameObject.SetActive(false);
-        OnEventFinished.Invoke();
+        GameManager.Instance.NormalSpeed();
+
+        //fail option
+        OnEventFinishedSuccessful?.Invoke(true);
     }
 
 }
