@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9131674254801019153}
   - component: {fileID: 3904060844958917397}
-  m_Layer: 0
+  - component: {fileID: 6928460922230376039}
+  m_Layer: 6
   m_Name: CharacterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +92,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6928460922230376039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080659205735298020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b498538100f22f4b8df860a6a025b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterVisual
+  _characterSprite: {fileID: 9131674254801019153}
 --- !u!1 &5374542644958785637
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +117,7 @@ GameObject:
   - component: {fileID: 5453240633494039486}
   - component: {fileID: 7290464775923888497}
   - component: {fileID: 8472186194669906915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -239,7 +253,8 @@ GameObject:
   - component: {fileID: 6878653053134261328}
   - component: {fileID: 7510492888211665662}
   - component: {fileID: 1216452089280032341}
-  m_Layer: 0
+  - component: {fileID: 6904508743444859201}
+  m_Layer: 6
   m_Name: CharacterController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,9 +290,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2e0b8c3fe61f745976c6a2d6e2004f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  _characterVisual: {fileID: 6928460922230376039}
   _actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _ownRigidbody: {fileID: 1216452089280032341}
-  _moveSpeed: 10
+  _maxSpeed: 10
+  _acceleration: 20
+  _deceleration: 30
+  _inputDeadzone: 0.1
 --- !u!50 &1216452089280032341
 Rigidbody2D:
   serializedVersion: 5
@@ -304,4 +323,41 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!70 &6904508743444859201
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041611923524584047}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.03657016, y: 0.02089721}
+  m_Size: {x: 0.8970471, y: 1.2612151}
+  m_Direction: 0
