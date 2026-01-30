@@ -3,14 +3,22 @@ using UnityEngine.InputSystem;
 
 public class CharacterControllerScript : MonoBehaviour
 {
+    public enum CharacterDirection { West, East }
+
+    [SerializeField]
+    CharacterVisual _characterVisual;
+
+    CharacterDirection _characterDirection;
 
     public InputActionAsset _actions;
 
     [SerializeField] Rigidbody2D _ownRigidbody;
 
     [Header("Character Parameters")]
-    [SerializeField]
-    private float _moveSpeed;
+    [SerializeField] float _maxSpeed = 10f;
+    [SerializeField] float _acceleration = 20f;
+    [SerializeField] float _deceleration = 30f;
+    [SerializeField] float _inputDeadzone = 0.1f;
 
 
     private InputAction _moveAction;
@@ -40,10 +48,42 @@ public class CharacterControllerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 moveDirection = _moveAction.ReadValue<Vector2>();
-        this.transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * _moveSpeed * Time.deltaTime;
+        Vector2 currentVelocity = _ownRigidbody.linearVelocity;
+        Vector2 moveDirection = GetMoveDirection(_moveAction.ReadValue<Vector2>());
+        Vector2 targetVelocity = moveDirection * _maxSpeed;
+
+        //if our moveDirection is not zero accelerate, else deccelerate
+        float tempAcceleration = moveDirection == Vector2.zero ? _deceleration : _acceleration;
+        _ownRigidbody.linearVelocity =
+                Vector2.MoveTowards(currentVelocity, targetVelocity, tempAcceleration * Time.fixedDeltaTime);
+
+        SetCharacterDirection(moveDirection);
     }
 
+    Vector2 GetMoveDirection(Vector2 input)
+    {
+        if (input.magnitude < _inputDeadzone)
+            return Vector2.zero;
+
+        return input.normalized;
+    }
+
+
+    void SetCharacterDirection(Vector2 direction)
+    {
+
+        int oldDirection = (int)_characterDirection;
+
+        if (direction.x >= _inputDeadzone)
+            _characterDirection = CharacterDirection.East;
+
+        else if (direction.x <= -_inputDeadzone)
+            _characterDirection = CharacterDirection.West;
+
+        //only call visual, if we actually switched direction
+        if (oldDirection != (int)_characterDirection)
+            _characterVisual.SetCharacterDirection(_characterDirection);
+    }
 }
 
 
