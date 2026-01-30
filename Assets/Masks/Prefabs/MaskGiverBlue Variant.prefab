@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 869916674352156652, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: CarriedMask
+      value: 
+      objectReference: {fileID: 11400000, guid: dfedaa2407c36d548bfd99e16452a10d, type: 2}
+    - target: {fileID: 869916674352156652, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
       propertyPath: carriedMask
       value: 
       objectReference: {fileID: 11400000, guid: dfedaa2407c36d548bfd99e16452a10d, type: 2}
