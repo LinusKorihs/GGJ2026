@@ -96,9 +96,7 @@ public class NPCMovement : MonoBehaviour
             return;
         }
 
-        var toTarget = (Vector2)currentTarget.transform.position - rb.position;
-
-        if (toTarget.magnitude <= arriveDistance)
+        if (!agent.pathPending && agent.remainingDistance <= arriveDistance)
         {
             agent.ResetPath();
 
@@ -114,6 +112,22 @@ public class NPCMovement : MonoBehaviour
             PickNextTarget();
             return;
         }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.Instance.NPCTimeChanged += adjustSpeed;
+    }
+
+    private void adjustSpeed(float speed)
+    {
+        agent.speed = moveSpeed * speed;
+        if (debugLogs) Debug.Log($"{name} adjusted speed to {agent.speed} due to NPCTime change");
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.NPCTimeChanged -= adjustSpeed;
     }
 
     private void ApplyForcedStateIfAny()
@@ -180,7 +194,8 @@ public class NPCMovement : MonoBehaviour
         }
         currentTarget = candidates[Random.Range(0, candidates.Count)];
         currentRoomId = currentTarget.roomId;
-        agent.speed = moveSpeed;
+        agent.speed = moveSpeed * GameManager.Instance.NPCTime;
+
 
         if (!agent.isOnNavMesh)
         {
