@@ -126,7 +126,6 @@ public class NPCMovement : MonoBehaviour
 
         if (forceStationary) state = NpcState.Stationary;
         else if (forceMoving) state = NpcState.Moving;
-        if (debugLogs && (forceStationary || forceMoving)) Debug.Log($"{name} forced state to {state}");
     }
 
     private void ApplyForcesToState()
