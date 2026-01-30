@@ -1997,6 +1997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterController
       objectReference: {fileID: 0}
+    - target: {fileID: 6444608597416754061, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6878653053134261328, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

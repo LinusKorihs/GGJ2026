@@ -45,6 +45,17 @@ public class CharacterControllerScript : MonoBehaviour
     private void OnUseAction(InputAction.CallbackContext context)
     {
         Debug.Log("Space pressed");
+        if (_maskingSystem.TryMaskStealing())
+        {
+            //success
+            //If stealing was successful, swap out sprite with current mask ( has been stolen at this point)
+            _characterVisual.UpdateCharacterSprite(_maskingSystem.CurrentMask.maskSprite);
+        }
+        else
+        {
+            //failure
+        }
+
     }
 
     void FixedUpdate()
@@ -84,6 +95,12 @@ public class CharacterControllerScript : MonoBehaviour
         //only call visual, if we actually switched direction
         if (oldDirection != (int)_characterDirection)
             _characterVisual.SetCharacterDirection(_characterDirection);
+    }
+
+
+    public void SetCharacterSprite(Sprite sprite)
+    {
+        _characterVisual.UpdateCharacterSprite(sprite);
     }
 }
 
