@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,12 +23,21 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] float _inputDeadzone = 0.1f;
 
 
+    bool _inputsLocked = false;
+    bool _inMinigame = false;
+    int _lockCount =0;
+
+
     private InputAction _moveAction;
     private InputAction _useAction;
 
+    public static CharacterControllerScript Instance;
 
     void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+
         _moveAction = _actions.FindActionMap("Player").FindAction("Move");
         _useAction = _actions.FindActionMap("Player").FindAction("Jump");
         _useAction.performed += OnUseAction;
@@ -42,27 +52,54 @@ public class CharacterControllerScript : MonoBehaviour
         _actions.FindActionMap("Player").Disable();
     }
 
+
+    public void LockControls()
+    {
+        _lockCount++;
+        _inputsLocked = true;
+    }
+
+
+    public void UnlockControls()
+    {
+        _lockCount--;
+        if(_lockCount <= 0)
+        _inputsLocked = false;
+    }
+
+    public void MinigameFinished()
+    {
+        _characterVisual.UpdateCharacterSprite(_maskingSystem.CurrentMask.maskSprite);
+        UnlockControls();
+    }
+
     private void OnUseAction(InputAction.CallbackContext context)
     {
-        Debug.Log("Space pressed");
-        if (_maskingSystem.TryMaskStealing())
-        {
-            //success
-            //If stealing was successful, swap out sprite with current mask ( has been stolen at this point)
-            _characterVisual.UpdateCharacterSprite(_maskingSystem.CurrentMask.maskSprite);
-        }
-        else
-        {
-            //failure
-        }
+        if (_inputsLocked)
+            return;
 
+        LockControls();
+
+        _maskingSystem.TryMaskStealing();
     }
+
 
     void FixedUpdate()
     {
         Vector2 currentVelocity = _ownRigidbody.linearVelocity;
         Vector2 moveDirection = GetMoveDirection(_moveAction.ReadValue<Vector2>());
+
         Vector2 targetVelocity = moveDirection * _maxSpeed;
+
+
+        //force zero speed when movement frozen
+        if (_inputsLocked)
+        {
+            targetVelocity = Vector2.zero;
+            moveDirection = Vector2.zero;
+        }
+
+
 
         //if our moveDirection is not zero accelerate, else deccelerate
         float tempAcceleration = moveDirection == Vector2.zero ? _deceleration : _acceleration;
