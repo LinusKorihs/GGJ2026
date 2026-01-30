@@ -7,6 +7,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     [SerializeField]
     CharacterVisual _characterVisual;
+    [SerializeField] MaskingSystem _maskingSystem;
 
     CharacterDirection _characterDirection;
 
