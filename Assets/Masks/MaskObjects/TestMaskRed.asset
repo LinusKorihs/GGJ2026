@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
-  m_Name: TestMask1
+  m_Name: TestMaskRed
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
   maskId: RedMask
   maskSprite: {fileID: -2402674569708345042, guid: ca5c0a78362eb084aac3019e1f69646d, type: 3}

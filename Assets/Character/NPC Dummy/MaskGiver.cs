@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MaskGiver : MonoBehaviour
 {
-    public MaskData carriedMask;
+    public MaskData CarriedMask;
 
     [SerializeField] GameObject _targetHighlighter;
 

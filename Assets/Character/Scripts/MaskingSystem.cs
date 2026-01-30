@@ -7,6 +7,13 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     public MaskData CurrentMask;
 
+
+    public bool CanStealMask
+    {
+        get { return _targetsInRange.Count > 0; }
+        private set { CanStealMask = value; }
+    }
+
     //public List<MaskData> StoredMasks;
 
 
@@ -25,16 +32,6 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
 
 
-    public void EquipMask(MaskData mask)
-    {
-        CurrentMask = mask;
-        ApplyMaskEffects(mask);
-    }
-
-    void ApplyMaskEffects(MaskData mask)
-    {
-        _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
-    }
 
     void Update()
     {
@@ -42,6 +39,8 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         if (_targetsInRange.Count > 1)
             RecalculateTarget();
     }
+
+    #region Targeting
 
     public void RemoteTriggerEnter2D(Collider2D collision)
     {
@@ -71,6 +70,8 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         {
             _currentTarget = null;
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), null);
+            // no target , disable ui
+            _maskingVisuals.SetUseActionHint(false);
             return;
         }
 
@@ -97,6 +98,9 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
             UpdateTargetVisual(null, _currentTarget.GetComponent<MaskGiver>());
         else
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), _currentTarget.GetComponent<MaskGiver>());
+
+        // new target , enable ui
+        _maskingVisuals.SetUseActionHint(true);
     }
 
     void UpdateTargetVisual(MaskGiver oldTarget, MaskGiver newTarget)
@@ -112,4 +116,32 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
             newTarget.UpdateHighlighterVisuals(true);
 
     }
+    #endregion
+
+    #region MaskStealing
+
+    public bool TryMaskStealing()
+    {
+        //minigame
+        if (true)
+        {
+            EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void EquipMask(MaskData mask)
+    {
+        CurrentMask = mask;
+        ApplyMaskEffects(mask);
+    }
+
+    void ApplyMaskEffects(MaskData mask)
+    {
+        _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
+    }
+
+    #endregion
 }
