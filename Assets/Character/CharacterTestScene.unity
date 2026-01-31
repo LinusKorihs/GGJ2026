@@ -2633,6 +2633,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6928460922230376039, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: _southSprite
+      value: 
+      objectReference: {fileID: 5427291976445804591, guid: ef305a3777f8e4041b1b22796de9da2a, type: 3}
+    - target: {fileID: 6928460922230376039, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: _eastWestSprite
+      value: 
+      objectReference: {fileID: 1636634150814382437, guid: c8515092705338f4c96e3cc1fec9302e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

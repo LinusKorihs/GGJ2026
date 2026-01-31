@@ -7,6 +7,12 @@ public class CharacterVisual : MonoBehaviour
     [SerializeField]
     Transform _characterSprite;
 
+    [SerializeField]
+    Sprite _eastWestSprite;
+
+    [SerializeField]
+    Sprite _southSprite;
+
     SpriteRenderer _characterSpriteRenderer;
 
     void Awake()
@@ -20,10 +26,17 @@ public class CharacterVisual : MonoBehaviour
         {
             case CharacterControllerScript.CharacterDirection.West:
                 _characterSprite.localScale = new Vector3(-1, 1, 1);
+                 _characterSpriteRenderer.sprite = _eastWestSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
                 _characterSprite.localScale = new Vector3(1, 1, 1);
+                  _characterSpriteRenderer.sprite = _eastWestSprite;
+                break;
+
+            case CharacterControllerScript.CharacterDirection.South:
+                _characterSprite.localScale = new Vector3(1, 1, 1);
+                _characterSpriteRenderer.sprite = _southSprite;
                 break;
         }
     }
