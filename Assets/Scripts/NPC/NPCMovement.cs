@@ -13,7 +13,6 @@ public class NPCMovement : MonoBehaviour
     [Header("State Control")]
     public bool forceStationary = false;
     public bool forceMoving = false;
-    public NpcState state = NpcState.Moving;
     public NpcState state = NpcState.Stationary;
 
     [Header("Timing")]
@@ -39,9 +38,12 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] public bool debugLogs = true;
     [SerializeField] private bool isStaring = false;
 
+<<<<<<< Updated upstream
     private Vector3 savedDestination;
     private bool hadSavedDestination;
+=======
     public System.Action<NpcState> NPCStateChanged;
+>>>>>>> Stashed changes
     private Rigidbody2D rb;
     private float nextStationaryRollTime;
     private NavMeshAgent agent;
@@ -86,7 +88,6 @@ public class NPCMovement : MonoBehaviour
 
                 if (Roll(statToMov))
                 {
-                    state = NpcState.Moving;
                     SetNPCState(NpcState.Moving);
                     if (debugLogs) Debug.Log($"{name} switching to Moving");
                     PickNextTarget();
@@ -109,7 +110,6 @@ public class NPCMovement : MonoBehaviour
 
             if (!forceMoving && Roll(movToStat))
             {
-                state = NpcState.Stationary;
                 SetNPCState(NpcState.Stationary);
                 if (debugLogs) Debug.Log($"{name} switching to Stationary");
                 nextStationaryRollTime = Time.time + stationaryCheckInterval;
@@ -217,8 +217,6 @@ public class NPCMovement : MonoBehaviour
             forceMoving = false;
         }
 
-        if (forceStationary) state = NpcState.Stationary;
-        else if (forceMoving) state = NpcState.Moving;
         if (forceStationary) SetNPCState(NpcState.Stationary);
         else if (forceMoving) SetNPCState(NpcState.Moving);
     }
@@ -231,7 +229,6 @@ public class NPCMovement : MonoBehaviour
 
     private void ApplyForcesToState()
     {
-        if (state == NpcState.Stationary) 
         if (state == NpcState.Stationary)
         {
             agent.ResetPath();
@@ -280,7 +277,6 @@ public class NPCMovement : MonoBehaviour
                 candidates = allowed; // If no other candidates, allow picking the same one
             }
         }
-        currentTarget = candidates[Random.Range(0, candidates.Count)];
         currentTarget = candidates[UnityEngine.Random.Range(0, candidates.Count)];
         currentRoomId = currentTarget.roomId;
         agent.speed = moveSpeed * GameManager.Instance.NPCTime;
