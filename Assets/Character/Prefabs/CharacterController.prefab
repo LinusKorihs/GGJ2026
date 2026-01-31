@@ -784,6 +784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterVisual
   _characterSprite: {fileID: 9131674254801019153}
+  _eastWestSprite: {fileID: 0}
+  _southSprite: {fileID: 0}
 --- !u!1 &5374542644958785637
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,8 +980,9 @@ MonoBehaviour:
   _ownRigidbody: {fileID: 1216452089280032341}
   _maxSpeed: 10
   _acceleration: 20
-  _deceleration: 30
+  _deceleration: 100
   _inputDeadzone: 0.1
+  _inputCooldownAfterUseEvent: 1
 --- !u!114 &6814714943179207416
 MonoBehaviour:
   m_ObjectHideFlags: 0
