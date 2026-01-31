@@ -201,7 +201,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.584, y: 1.45}
+    oldSize: {x: 1.024, y: 1.536}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 6964580068479559382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.358, z: 0}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3bc01720f2ac04cb2e3bcf2e804f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCVision
-  viewDistance: 3
-  viewAngle: 90
+  viewDistance: 2
+  viewAngle: 45
   localOriginOffset: {x: 0, y: 0, z: 0}
   originHeightOffset: 0
   useMovementFacing: 1
@@ -348,10 +348,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.08, y: 4.4}
+    newSize: {x: 5.08, y: 4.4}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
