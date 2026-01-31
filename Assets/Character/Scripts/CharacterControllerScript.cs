@@ -10,7 +10,8 @@ public class CharacterControllerScript : MonoBehaviour
     CharacterVisual _characterVisual;
     [SerializeField] MaskingSystem _maskingSystem;
 
-    CharacterDirection _characterDirection;
+    // TODO Set this depending on in which direction our model faces at start
+    CharacterDirection _characterDirection = CharacterDirection.East;
 
     public InputActionAsset _actions;
 
@@ -24,7 +25,6 @@ public class CharacterControllerScript : MonoBehaviour
 
 
     bool _inputsLocked = false;
-    bool _inMinigame = false;
     int _lockCount =0;
 
 
@@ -65,12 +65,6 @@ public class CharacterControllerScript : MonoBehaviour
         _lockCount--;
         if(_lockCount <= 0)
         _inputsLocked = false;
-    }
-
-    public void MinigameFinished()
-    {
-        _characterVisual.UpdateCharacterSprite(_maskingSystem.CurrentMask.maskSprite);
-        UnlockControls();
     }
 
     private void OnUseAction(InputAction.CallbackContext context)
@@ -133,7 +127,6 @@ public class CharacterControllerScript : MonoBehaviour
         if (oldDirection != (int)_characterDirection)
             _characterVisual.SetCharacterDirection(_characterDirection);
     }
-
 
     public void SetCharacterSprite(Sprite sprite)
     {

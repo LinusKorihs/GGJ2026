@@ -23,4 +23,5 @@ public class MaskingVisuals : MonoBehaviour
     {
         _UIUseInputHint.gameObject.SetActive(state);
     }
+
 }

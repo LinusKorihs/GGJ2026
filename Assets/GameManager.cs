@@ -6,6 +6,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public float NPCTime = 1;
+    
+    [SerializeField]
+    float _slowSpeed = 0.01f;
+
+    [SerializeField]
+    float _normalSpeed = 1f;
+
 
     public Action<float> NPCTimeChanged;
     public bool TESTNPCSPEED = false;
@@ -28,6 +35,17 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = speed;
     }
+
+    public void SlowSpeed()
+    {
+        AdjustNPCTimeSpeed(_slowSpeed);
+    }
+
+    public void NormalSpeed()
+    {
+         AdjustNPCTimeSpeed(_normalSpeed);
+    }
+
 
     public void AdjustNPCTimeSpeed(float speed)
     {
