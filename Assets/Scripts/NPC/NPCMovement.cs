@@ -38,13 +38,9 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] public bool debugLogs = true;
     [SerializeField] private bool isStaring = false;
 
-<<<<<<< Updated upstream
     private Vector3 savedDestination;
     private bool hadSavedDestination;
     public System.Action<NpcState> NPCStateChanged;
-=======
-    public System.Action<NpcState> NPCStateChanged;
->>>>>>> Stashed changes
     private Rigidbody2D rb;
     private float nextStationaryRollTime;
     private NavMeshAgent agent;
