@@ -7,7 +7,6 @@ public class NPCSearchVisual : MonoBehaviour
     public NPCPatience patience;
     public Transform maskTransform;
 
-
     [Tooltip("Child transform that holds the Base sprite (optional, only for ordering).")]
     public Transform baseObj;
 
@@ -30,8 +29,16 @@ public class NPCSearchVisual : MonoBehaviour
     [Tooltip("If your visual cone sprite points UP by default, keep this 0. If it points RIGHT, use -90, etc.")]
     public float spriteFacingAngleOffset = 0f;
 
+    [Tooltip("If true, mask grows from origin forward instead of from center.")]
+    public bool anchoredFillFromOrigin = true;
+
+    [Tooltip("Local space offset for the reveal mask origin (0 means mask pivot sits exactly at SearchVisual origin).")]
+    public Vector2 maskLocalOriginOffset = Vector2.zero;
+
     [Header("Debug")]
     public bool debugLogs = false;
+
+    private Vector3 maskBaseLocalPos;
 
     private void Awake()
     {
@@ -39,8 +46,8 @@ public class NPCSearchVisual : MonoBehaviour
         if (patience == null) patience = GetComponentInParent<NPCPatience>();
         if (mask == null) mask = GetComponentInChildren<SpriteMask>();
         if (maskTransform == null && mask != null) maskTransform = mask.transform;
-
         if (debugLogs) Debug.Log($"[NPCSearchVisual:{name}] Init vision={(vision != null)} patience={(patience != null)} mask={(mask != null)}", this);
+        if (maskTransform != null) maskBaseLocalPos = maskTransform.localPosition;
     }
 
     private void LateUpdate()
@@ -80,11 +87,27 @@ public class NPCSearchVisual : MonoBehaviour
 
     private void ApplyPatienceReveal()
     {
-        if (maskTransform == null) return;
+        if (maskTransform == null || mask == null || mask.sprite == null) return;
 
         float t = patience.Normalized; // 0..1
-        float s = Mathf.Lerp(0f, maskMaxScale, t);
 
-        maskTransform.localScale = new Vector3(s, s, 1f);
+        // Scale Y grows with patience
+        Vector3 s = maskTransform.localScale;
+        s.x = maskMaxScale; // keep full width
+        s.y = Mathf.Lerp(0f, maskMaxScale, t);
+        s.z = 1f;
+        maskTransform.localScale = s;
+
+        if (!anchoredFillFromOrigin) return;
+
+        // Use sprite bounds height to offset correctly
+        float spriteHeight = mask.sprite.bounds.size.y;  // in local units
+        float visibleHeight = spriteHeight * s.y;
+
+        Vector3 pos = maskBaseLocalPos;
+        pos.x += maskLocalOriginOffset.x;
+        pos.y = maskBaseLocalPos.y + maskLocalOriginOffset.y + (visibleHeight * 0.5f);
+        maskTransform.localPosition = pos;
     }
+
 }
