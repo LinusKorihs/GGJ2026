@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
-  m_Name: TestMaskGreen
+  m_Name: MaskVIP
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
-  MaskId: Green
+  MaskId: Purple
   MaskSprites:
-    NSprite: {fileID: -4229560766721731127, guid: 13928b6e29f543d48b5775976559cc99, type: 3}
-    SSprite: {fileID: 7488061576388489711, guid: ca6c8780bb8695144b49ea3555a37693, type: 3}
-    ESprite: {fileID: -7006706055660387490, guid: 8ebfd4e3b289d3b458b7ecab653c47b3, type: 3}
-    WSprite: {fileID: 4843988770560627392, guid: 99c51d423f289314c8aa34c50d63747f, type: 3}
+    NSprite: {fileID: -8476613740524126668, guid: 41cdc2a6b9d9f8741a6c42fede362b65, type: 3}
+    SSprite: {fileID: -6154215281419720663, guid: e4d03cf84def2a94590888d059389a26, type: 3}
+    ESprite: {fileID: 9200928764826963177, guid: 0cff7f2e3edbfa64a9ee46b98c8535c3, type: 3}
+    WSprite: {fileID: -230186538448819961, guid: cd70cacd646c6d94584e23e84fb6f278, type: 3}
   HighlightSprites:
     NSprite: {fileID: 1386956593980406148, guid: f15842cea6bf9534784c695c4f021b6b, type: 3}
     SSprite: {fileID: 1386956593980406148, guid: f15842cea6bf9534784c695c4f021b6b, type: 3}
     ESprite: {fileID: 1443456566604677669, guid: 7968227131a18b648a9c6240e45ca5d9, type: 3}
     WSprite: {fileID: 5541081901727163194, guid: e42f084d108ca2542bfa0f134986ae46, type: 3}
-  ScreenTint: {r: 0.22169733, g: 0.7735849, b: 0.15690638, a: 0.40392157}
+  ScreenTint: {r: 0.2784314, g: 0.015686275, b: 0.23529413, a: 0.3882353}
   ShouldTintScreen: 1

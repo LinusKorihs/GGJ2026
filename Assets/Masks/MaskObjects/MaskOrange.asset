@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
-  m_Name: TestMaskOrange
+  m_Name: MaskOrange
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
   MaskId: Orange
   MaskSprites:
