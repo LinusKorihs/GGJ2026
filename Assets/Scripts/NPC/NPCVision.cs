@@ -1,119 +1,308 @@
 using UnityEngine;
-using System;
+using UnityEngine.Events;
 
 public class NPCVision : MonoBehaviour
 {
-    [Header("Detection")]
-    public float detectionRadius = 5f;
-    [Range(0f, 360f)] public float fovAngle = 120f;
-    public bool useFOV = true;
+    [Header("Vision Cone")]
+    [Tooltip("Max distance the NPC can see.")]
+    public float viewDistance = 6f;
 
-    [Tooltip("Layers that block line of sight (Walls, Props, etc.)")]
-    public LayerMask blockingMask;
+    [Tooltip("Full cone angle in degrees (e.g. 90 = 45 left + 45 right).")]
+    [Range(1f, 179f)]
+    public float viewAngle = 90f;
 
-    [Header("Patience / Suspicion")]
-    [Tooltip("Seconds the player can be in the field of view before being 'caught'.")]
-    public float timeToGetCaught = 1.5f;
+    [Tooltip("Local space offset from this transform (Eyes) for ray origin / cone origin.")]
+    public Vector3 localOriginOffset = Vector3.zero;
 
-    [Tooltip("How quickly the meter decays when the player is out of sight (1 = same speed as buildup).")]
-    public float decayMultiplier = 0.75f;
+    [Tooltip("Extra vertical offset added to the origin (useful if eyes bone is a bit low/high).")]
+    public float originHeightOffset = 0.0f;
 
-    [Header("Player")]
+    [Tooltip("If true, cone direction follows movement direction from NavMeshAgent.")]
+    public bool useMovementFacing = true;
+
+    [Tooltip("Fallback direction when no movement is available.")]
+    public Vector2 fallbackFacing = Vector2.up;
+
+    [Tooltip("Minimum movement speed to update facing (prevents jitter).")]
+    public float minMoveSqrMagnitudeToUpdateFacing = 0.01f;
+
+    [Tooltip("How quickly the facing direction smooths toward movement direction (0 = no smoothing).")]
+    public float facingSmoothing = 12f;
+
+    [Header("Player Detection")]
+    [Tooltip("Player must have this tag.")]
     public string playerTag = "Player";
 
-    [Header("Vision Origin (optional)")]
-    public Transform visionOrigin; // if empty -> this.transform
-    public Vector2 targetOffset = new Vector2(0f, 0.6f); // aim offset on player (2D)
+    [Tooltip("Only colliders on these layers are considered player candidates (set to Player layer).")]
+    public LayerMask playerLayerMask;
 
-    // 0..1
-    public float suspicion01 { get; private set; }
-    public bool hasLineOfSight { get; private set; }
-    public bool isCaught { get; private set; }
+    [Tooltip("Obstacles that block vision (e.g. Walls). Leave empty to ignore occlusion.")]
+    public LayerMask occlusionLayerMask;
 
-    public event Action<float> OnSuspicionChanged; // float 0..1
-    public event Action OnCaught;
+    [Tooltip("How often we scan for the player (seconds). Lower = more responsive, higher = cheaper).")]
+    public float scanInterval = 0.1f;
 
-    Transform _player;
+    [Header("Patience")]
+    [Tooltip("Current patience value (runtime).")]
+    [SerializeField] private float patience = 0f;
 
-    void Update()
+    [Tooltip("Patience increases per second while player is seen.")]
+    public float patienceGainPerSecond = 35f;
+
+    [Tooltip("Patience decreases per second while player is NOT seen.")]
+    public float patienceLossPerSecond = 25f;
+
+    [Tooltip("Clamp for patience value.")]
+    public float patienceMax = 100f;
+
+    [Tooltip("When patience reaches this value -> caught.")]
+    public float caughtThreshold = 100f;
+
+    [Header("Events")]
+    public UnityEvent onCaught;
+
+    [Header("Debug")]
+    public bool debugLogs = false;
+    public bool debugGizmos = true;
+    public bool debugRadiusGizmo = false;
+
+    // Runtime
+    private Transform player;
+    private float nextScanTime;
+    private bool isSeeingPlayer;
+    private bool hasCaught;
+    private UnityEngine.AI.NavMeshAgent agent;
+    private Vector2 currentFacing;
+
+    public float Patience => patience;
+    public bool IsSeeingPlayer => isSeeingPlayer;
+
+    private void Awake()
     {
-        if (isCaught) return;
+        // No hard dependency: just find by tag once
+        var go = GameObject.FindGameObjectWithTag(playerTag);
+        if (go != null) player = go.transform;
 
-        if (_player == null)
+        if (debugLogs)
         {
-            var go = GameObject.FindGameObjectWithTag(playerTag);
-            if (go != null) _player = go.transform;
+            Log($"Initialized. Player found: {(player != null ? player.name : "NO")}");
         }
 
-        bool seesPlayer = (_player != null) && CanSee(_player);
+        agent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();
+        currentFacing = fallbackFacing.sqrMagnitude > 0.0001f ? fallbackFacing.normalized : Vector2.up;
 
-        float dt = Time.deltaTime;
-
-        if (seesPlayer)
+        if (debugLogs)
         {
-            hasLineOfSight = true;
-            suspicion01 += dt / Mathf.Max(0.01f, timeToGetCaught);
-        }
-        else
-        {
-            hasLineOfSight = false;
-            suspicion01 -= dt / Mathf.Max(0.01f, timeToGetCaught) * decayMultiplier;
-        }
-
-        suspicion01 = Mathf.Clamp01(suspicion01);
-        OnSuspicionChanged?.Invoke(suspicion01);
-
-        if (suspicion01 >= 1f)
-        {
-            isCaught = true;
-            OnCaught?.Invoke();
+            Log($"Agent found: {(agent != null ? agent.name : "NO")}");
         }
     }
 
-    bool CanSee(Transform target)
+    private void Update()
     {
-        Transform o = visionOrigin != null ? visionOrigin : transform;
+        if (hasCaught) return;
 
-        Vector2 origin = o.position;
-        Vector2 targetPos = (Vector2)target.position + targetOffset;
+        if (Time.time >= nextScanTime)
+        {
+            nextScanTime = Time.time + Mathf.Max(0.02f, scanInterval);
+            isSeeingPlayer = ScanConeForPlayer2D();
+        }
+
+        UpdatePatience(Time.deltaTime);
+
+        if (!hasCaught && patience >= caughtThreshold)
+        {
+            hasCaught = true;
+            patience = caughtThreshold;
+            Log("CAUGHT! Patience threshold reached.", true);
+
+            onCaught?.Invoke();
+        }
+    }
+
+    private void UpdatePatience(float dt)
+    {
+        float before = patience;
+
+        if (isSeeingPlayer) patience += patienceGainPerSecond * dt;
+        else patience -= patienceLossPerSecond * dt;
+
+        patience = Mathf.Clamp(patience, 0f, patienceMax);
+
+        if (debugLogs && Mathf.Abs(patience - before) > 0.01f)
+        {
+            Log($"Patience {(isSeeingPlayer ? "++" : "--")} -> {patience:0.0}/{patienceMax:0.0}");
+        }
+    }
+
+    private bool ScanConeForPlayer2D()
+    {
+        // If player transform wasn't found (scene reload etc.), try again sometimes.
+        if (player == null)
+        {
+            var go = GameObject.FindGameObjectWithTag(playerTag);
+            if (go != null) player = go.transform;
+            if (player == null) return false;
+        }
+
+        Vector2 origin = GetOriginWorld2D();
+
+        // Broadphase: check if any Player-layer collider is near
+        Collider2D[] hits = Physics2D.OverlapCircleAll(origin, viewDistance, playerLayerMask);
+
+        if (hits == null || hits.Length == 0) return false;
+
+        // Find the nearest collider belonging to the tagged player (safe if multiple colliders)
+        Collider2D best = null;
+        float bestSqr = float.MaxValue;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i] == null) continue;
+            if (!hits[i].CompareTag(playerTag)) continue;
+
+            Vector2 p = hits[i].bounds.center;
+            float sqr = (p - origin).sqrMagnitude;
+            if (sqr < bestSqr)
+            {
+                bestSqr = sqr;
+                best = hits[i];
+            }
+        }
+
+        if (best == null) return false;
+
+        Vector2 targetPos = best.bounds.center;
         Vector2 toTarget = targetPos - origin;
 
         float dist = toTarget.magnitude;
-        if (dist > detectionRadius) return false;
+        if (dist <= 0.0001f) return true;
 
-        Vector2 dir = toTarget / Mathf.Max(0.0001f, dist);
+        Vector2 dir = toTarget / dist;
 
-        // Top-Down 2D: Forward is Up
-        Vector2 facing = o.up;
+        // Cone angle check in 2D
+        float halfAngle = viewAngle * 0.5f;
 
-        if (useFOV)
+        // In 2D, sprites commonly face to the right (local +X)
+        Vector2 facing = GetFacing2D();
+
+        float angleToTarget = Vector2.Angle(facing, dir);
+        if (angleToTarget > halfAngle) return false;
+
+        // Optional line-of-sight check (occlusion)
+        if (occlusionLayerMask.value != 0)
         {
-            float ang = Vector2.Angle(facing, dir);
-            if (ang > fovAngle * 0.5f) return false;
+            RaycastHit2D hit = Physics2D.Raycast(origin, dir, dist, occlusionLayerMask);
+            if (hit.collider != null)
+            {
+                if (debugLogs) Log($"LOS blocked by: {hit.collider.name}");
+                return false;
+            }
         }
 
-        // LOS check: Raycast from origin to target
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, dist, blockingMask);
-        if (hit.collider != null) return false;
-
+        if (debugLogs) Log("Player seen!");
         return true;
     }
 
-    void OnDrawGizmosSelected()
+    private Vector2 GetOriginWorld2D()
     {
-        Transform o = visionOrigin != null ? visionOrigin : transform;
+        Vector3 origin = transform.TransformPoint(localOriginOffset);
+        origin.y += originHeightOffset;
+        return new Vector2(origin.x, origin.y);
+    }
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(o.position, detectionRadius);
+    private void Log(string msg, bool error = false)
+    {
+        if (!debugLogs && !error) return;
 
-        if (!useFOV) return;
+        string prefix = $"[NPCVision:{name}] ";
+        if (error) Debug.LogError(prefix + msg, this);
+        else Debug.Log(prefix + msg, this);
+    }
 
-        Vector3 facing3 = o.up; // 2D facing
-        Vector3 left  = Quaternion.Euler(0, 0, -fovAngle * 0.5f) * facing3;
-        Vector3 right = Quaternion.Euler(0, 0,  fovAngle * 0.5f) * facing3;
+    private Vector2 GetFacing2D()
+    {
+        if (!useMovementFacing || agent == null)
+            return currentFacing.sqrMagnitude > 0.0001f ? currentFacing : Vector2.up;
 
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(o.position, o.position + left * detectionRadius);
-        Gizmos.DrawLine(o.position, o.position + right * detectionRadius);
+        // NavMeshAgent in 2D: desiredVelocity funktioniert meist am besten
+        Vector3 dv3 = agent.desiredVelocity;
+        Vector2 desired = new Vector2(dv3.x, dv3.y);
+
+        // Falls desiredVelocity mal 0 ist, fallback auf velocity
+        if (desired.sqrMagnitude < minMoveSqrMagnitudeToUpdateFacing)
+        {
+            Vector3 v3 = agent.velocity;
+            desired = new Vector2(v3.x, v3.y);
+        }
+
+        // Wenn wir wirklich "moving" sind -> update facing
+        if (desired.sqrMagnitude >= minMoveSqrMagnitudeToUpdateFacing)
+        {
+            Vector2 targetFacing = desired.normalized;
+
+            if (facingSmoothing <= 0f)
+                currentFacing = targetFacing;
+            else
+                currentFacing = Vector2.Lerp(currentFacing, targetFacing, Time.deltaTime * facingSmoothing);
+
+            if (currentFacing.sqrMagnitude > 0.0001f)
+                currentFacing.Normalize();
+        }
+        else
+        {
+            // Steht: facing bleibt wie zuletzt (oder falls ungültig -> fallback)
+            if (currentFacing.sqrMagnitude < 0.0001f)
+                currentFacing = fallbackFacing.sqrMagnitude > 0.0001f ? fallbackFacing.normalized : Vector2.up;
+        }
+
+        return currentFacing;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (!debugGizmos) return;
+
+        Vector2 origin;
+        if (Application.isPlaying) origin = GetOriginWorld2D();
+        else
+        {
+            Vector3 o3 = transform.TransformPoint(localOriginOffset);
+            o3.y += originHeightOffset;
+            origin = new Vector2(o3.x, o3.y);
+        }
+
+        // Optional radius gizmo as circle
+        if (debugRadiusGizmo) DrawWireCircle(origin, viewDistance, 32);
+
+        // Draw cone edges in XY plane
+        float half = viewAngle * 0.5f;
+        Vector2 facing = Application.isPlaying ? GetFacing2D() : (fallbackFacing.sqrMagnitude > 0.0001f ? fallbackFacing.normalized : Vector2.up);
+
+        Vector2 leftDir = Rotate2D(facing, -half).normalized;
+        Vector2 rightDir = Rotate2D(facing, half).normalized;
+
+        Gizmos.DrawLine(origin, origin + leftDir * viewDistance);
+        Gizmos.DrawLine(origin, origin + rightDir * viewDistance);
+        Gizmos.DrawLine(origin, origin + facing * viewDistance);
+    }
+
+    private static Vector2 Rotate2D(Vector2 v, float degrees)
+    {
+        float rad = degrees * Mathf.Deg2Rad;
+        float sin = Mathf.Sin(rad);
+        float cos = Mathf.Cos(rad);
+        return new Vector2(cos * v.x - sin * v.y, sin * v.x + cos * v.y);
+    }
+
+    private static void DrawWireCircle(Vector2 center, float radius, int segments)
+    {
+        Vector3 prev = center + Vector2.right * radius;
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = (i / (float)segments) * Mathf.PI * 2f;
+            Vector3 next = center + new Vector2(Mathf.Cos(t), Mathf.Sin(t)) * radius;
+            Gizmos.DrawLine(prev, next);
+            prev = next;
+        }
     }
 }
