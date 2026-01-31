@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ddbbb6027aa1d5f40ae6aeaf10b5d15c
+guid: 40eb3ab9dd7292d4eb8568386990947e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7471307751964607756
-    second: Animation front_0
+      213: 7886589687419991260
+    second: Animation side right_0
   - first:
-      213: 1509909460989874585
-    second: Animation front_1
+      213: 7064385029097938458
+    second: Animation side right_1
   - first:
-      213: -2331751257737325107
-    second: Animation front_2
+      213: -3507058298529230043
+    second: Animation side right_2
   - first:
-      213: 7216626614243779656
-    second: Animation front_3
+      213: 6284277657247293323
+    second: Animation side right_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animation front_0
+      name: Animation side right_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4faf68c2f25905890800000000000000
-      internalID: -7471307751964607756
+      spriteID: cd47de7298bc27d60800000000000000
+      internalID: 7886589687419991260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animation front_1
+      name: Animation side right_1
       rect:
         serializedVersion: 2
         x: 512
@@ -146,8 +146,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9919d49a7a644f410800000000000000
-      internalID: 1509909460989874585
+      spriteID: a1e58f751ccb90260800000000000000
+      internalID: 7064385029097938458
       vertices: []
       indices: 
       edges: []
@@ -156,7 +156,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6821581c6291cb044ad92eff008cc4c0
+    spriteID: 681e0f977d3db064d9985247ee6f6bc5
     internalID: 0
     vertices: []
     indices: 
@@ -168,8 +168,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":768.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Animation front_0: -7471307751964607756
-      Animation front_1: 1509909460989874585
+      Animation side right_0: 7886589687419991260
+      Animation side right_1: 7064385029097938458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

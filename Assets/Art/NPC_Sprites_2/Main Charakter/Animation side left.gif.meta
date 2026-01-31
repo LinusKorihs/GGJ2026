@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 549ab69a9782c6e4eb0a3631a5897008
+guid: 548d7e8bbb4a1fa4781cfa65bef7a826
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2394403616405501382
-    second: Animation side_0
+      213: 1295861982360819511
+    second: Animation side left_0
   - first:
-      213: -4204884533325542068
-    second: Animation side_1
+      213: -4273737300338869615
+    second: Animation side left_1
   - first:
-      213: -729796634037003352
-    second: Animation side_2
+      213: 1495223154616133311
+    second: Animation side left_2
   - first:
-      213: -7414854091596313296
-    second: Animation side_3
+      213: -2759766462727720039
+    second: Animation side left_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,89 +109,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animation side_0
+      name: Animation side left_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 106
-        width: 228
-        height: 596
+        x: 0
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c5b2cc2761aa3120800000000000000
-      internalID: 2394403616405501382
+      spriteID: 737dc807b93dbf110800000000000000
+      internalID: 1295861982360819511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animation side_1
+      name: Animation side left_1
       rect:
         serializedVersion: 2
-        x: 665
-        y: 124
-        width: 228
-        height: 596
+        x: 512
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4dc89d9bcf35a5c0800000000000000
-      internalID: -4204884533325542068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animation side_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 45
-        width: 264
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8abd2f5f3dd3fd5f0800000000000000
-      internalID: -729796634037003352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animation side_3
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 45
-        width: 264
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03dcc014d75291990800000000000000
-      internalID: -7414854091596313296
+      spriteID: 19af6fd8192a0b4c0800000000000000
+      internalID: -4273737300338869615
       vertices: []
       indices: 
       edges: []
@@ -200,7 +156,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e406a2e692955d4190d2f0af4d6ab1e
     internalID: 0
     vertices: []
     indices: 
@@ -208,12 +164,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":768.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Animation side_0: 2394403616405501382
-      Animation side_1: -4204884533325542068
-      Animation side_2: -729796634037003352
-      Animation side_3: -7414854091596313296
+      Animation side left_0: 1295861982360819511
+      Animation side left_1: -4273737300338869615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
