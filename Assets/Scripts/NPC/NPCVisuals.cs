@@ -74,7 +74,10 @@ public class NPCVisuals : MonoBehaviour
     public void UpdateNPCLookDirection(CharacterControllerScript.CharacterDirection newDirection)
     {
         _npcDirection = newDirection;
-        ChangeNPCSprite();
+        if (_isInWalkingAnim)
+            StartWalk(newDirection);
+        else
+            ChangeNPCSprite();
     }
 
     void ChangeNPCSprite()
@@ -150,7 +153,7 @@ public class NPCVisuals : MonoBehaviour
     {
         if (!_isInWalkingAnim)
             return;
-            
+
         _characterStillSpriteRenderer.gameObject.SetActive(true);
         _characterAnimationSpriteRenderer.gameObject.SetActive(false);
         _isInWalkingAnim = false;

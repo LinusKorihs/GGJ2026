@@ -105,6 +105,10 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void OnUseAction(InputAction.CallbackContext context)
     {
+        // Special case if we press space on Game Over 
+        if(GameManager.Instance.IsGameOver)
+            GameManager.Instance.GameOverPressed();
+
         if (_onUseCooldown)
             return;
 
