@@ -5,8 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    GameOverLoading _gameOverLoading;
+
     public float NPCTime = 1;
-    
+
     [SerializeField]
     float _slowSpeed = 0.01f;
 
@@ -17,9 +19,15 @@ public class GameManager : MonoBehaviour
     public Action<float> NPCTimeChanged;
     public bool TESTNPCSPEED = false;
 
+    public bool IsGameOver;
+  
+
     void Awake()
     {
         if (Instance == null) Instance = this;
+
+
+        _gameOverLoading = this.GetComponent<GameOverLoading>();
     }
 
     void Update()
@@ -43,7 +51,12 @@ public class GameManager : MonoBehaviour
 
     public void NormalSpeed()
     {
-         AdjustNPCTimeSpeed(_normalSpeed);
+        AdjustNPCTimeSpeed(_normalSpeed);
+    }
+
+    public void GameOverPressed()
+    {
+        _gameOverLoading.LoadGameOver();
     }
 
 

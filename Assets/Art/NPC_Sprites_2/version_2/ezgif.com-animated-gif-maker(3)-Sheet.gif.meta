@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7dcb6114d7826e048b9c7bd16f008d4d
+guid: 61527486ead67324ea30c3e14113a493
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7976745898443285709
-    second: Untitled279_20260131163440_0
+      213: -4577901137887687682
+    second: ezgif.com-animated-gif-maker(3)-Sheet_0
+  - first:
+      213: 3022702491976699965
+    second: ezgif.com-animated-gif-maker(3)-Sheet_1
+  - first:
+      213: -5130672512496747368
+    second: ezgif.com-animated-gif-maker(3)-Sheet_2
+  - first:
+      213: 2997512171883050432
+    second: ezgif.com-animated-gif-maker(3)-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled279_20260131163440_0
+      name: ezgif.com-animated-gif-maker(3)-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 768
+        x: 42
+        y: 14
+        width: 428
+        height: 737
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc4244cc12813be60800000000000000
-      internalID: 7976745898443285709
+      spriteID: efb095b7b270870c0800000000000000
+      internalID: -4577901137887687682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ezgif.com-animated-gif-maker(3)-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 8
+        width: 452
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3095f7c6ebc2f920800000000000000
+      internalID: 3022702491976699965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ezgif.com-animated-gif-maker(3)-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 14
+        width: 428
+        height: 737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c35c988803cc8b0800000000000000
+      internalID: -5130672512496747368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ezgif.com-animated-gif-maker(3)-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 8
+        width: 452
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5bff6507d499920800000000000000
+      internalID: 2997512171883050432
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 22ced15384a1ad44db54ac416b376140
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled279_20260131163440_0: 7976745898443285709
+      ezgif.com-animated-gif-maker(3)-Sheet_0: -4577901137887687682
+      ezgif.com-animated-gif-maker(3)-Sheet_1: 3022702491976699965
+      ezgif.com-animated-gif-maker(3)-Sheet_2: -5130672512496747368
+      ezgif.com-animated-gif-maker(3)-Sheet_3: 2997512171883050432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

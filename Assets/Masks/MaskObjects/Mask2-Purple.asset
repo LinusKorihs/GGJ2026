@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
-  m_Name: MaskPurple
+  m_Name: Mask2-Purple
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
   MaskId: Purple
   MaskSprites:
@@ -23,5 +23,6 @@ MonoBehaviour:
     SSprite: {fileID: 1386956593980406148, guid: f15842cea6bf9534784c695c4f021b6b, type: 3}
     ESprite: {fileID: 1443456566604677669, guid: 7968227131a18b648a9c6240e45ca5d9, type: 3}
     WSprite: {fileID: 5541081901727163194, guid: e42f084d108ca2542bfa0f134986ae46, type: 3}
+  WalkingController: {fileID: 9100000, guid: 81bab11dcd7abee4f8d216ca5df0a7a1, type: 2}
   ScreenTint: {r: 0.2784314, g: 0.015686275, b: 0.23529413, a: 0.3882353}
   ShouldTintScreen: 1
