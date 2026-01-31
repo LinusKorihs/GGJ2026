@@ -5,6 +5,7 @@ public class NPCType : MonoBehaviour
     public enum Type
     {
         Guest,
-        Staff
+        Staff,
+        VIP
     }
 }
