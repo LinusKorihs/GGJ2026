@@ -13,7 +13,7 @@ public class NPCMovement : MonoBehaviour
     [Header("State Control")]
     public bool forceStationary = false;
     public bool forceMoving = false;
-    public NpcState state = NpcState.Moving;
+    public NpcState state = NpcState.Stationary;
 
     [Header("Timing")]
     public float stationaryCheckInterval = 2.0f;
@@ -36,7 +36,11 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] private string currentRoomId;
     [SerializeField] private WayPoint currentTarget;
     [SerializeField] public bool debugLogs = true;
+    [SerializeField] private bool isStaring = false;
 
+    private Vector3 savedDestination;
+    private bool hadSavedDestination;
+    public System.Action<NpcState> NPCStateChanged;
     private Rigidbody2D rb;
     private float nextStationaryRollTime;
     private NavMeshAgent agent;
@@ -69,6 +73,7 @@ public class NPCMovement : MonoBehaviour
     private void Update()
     {
         ApplyForcedStateIfAny();
+        if (isStaring) return;
 
         if (state == NpcState.Stationary)
         {
@@ -80,7 +85,7 @@ public class NPCMovement : MonoBehaviour
 
                 if (Roll(statToMov))
                 {
-                    state = NpcState.Moving;
+                    SetNPCState(NpcState.Moving);
                     if (debugLogs) Debug.Log($"{name} switching to Moving");
                     PickNextTarget();
                 }
@@ -102,7 +107,7 @@ public class NPCMovement : MonoBehaviour
 
             if (!forceMoving && Roll(movToStat))
             {
-                state = NpcState.Stationary;
+                SetNPCState(NpcState.Stationary);
                 if (debugLogs) Debug.Log($"{name} switching to Stationary");
                 nextStationaryRollTime = Time.time + stationaryCheckInterval;
                 return;
@@ -114,9 +119,55 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    public void StartStare()
+    {
+        if (agent == null) return;
+        if (isStaring) return;
+
+        // Save current destination if any
+        hadSavedDestination = agent.hasPath;
+        if (hadSavedDestination)
+            savedDestination = agent.destination;
+
+        isStaring = true;
+
+        // Hard stop
+        agent.isStopped = true;
+        agent.ResetPath();
+
+        if (debugLogs) Debug.Log($"{name} START STARE (saved={hadSavedDestination})");
+    }
+
+    public void StopStare()
+    {
+        if (agent == null) return;
+        if (!isStaring) return;
+
+        isStaring = false;
+        agent.isStopped = false;
+
+        // Continue previous destination
+        if (hadSavedDestination)
+        {
+            if (!agent.isOnNavMesh)
+            {
+                if (debugLogs) Debug.LogWarning($"{name} not on NavMesh when resuming -> trying snap");
+                if (!TrySnapAgentToNavMesh()) return;
+            }
+
+            agent.SetDestination(savedDestination);
+            if (debugLogs) Debug.Log($"{name} STOP STARE -> resume {savedDestination}");
+        }
+        else
+        {
+            // If there was no path, just keep normal flow
+            if (debugLogs) Debug.Log($"{name} STOP STARE -> no saved dest, continuing normal");
+        }
+    }
+
     private void OnEnable()
     {
-        //GameManager.Instance.NPCTimeChanged += adjustSpeed;
+        GameManager.Instance.NPCTimeChanged += adjustSpeed;
     }
 
     private void adjustSpeed(float speed)
@@ -125,9 +176,34 @@ public class NPCMovement : MonoBehaviour
         if (debugLogs) Debug.Log($"{name} adjusted speed to {agent.speed} due to NPCTime change");
     }
 
+    public CharacterControllerScript.CharacterDirection GetNPCLookDirection()
+    {
+        Vector3 direction = agent.destination - agent.transform.position;
+        direction.Normalize();
+
+        float absX = Mathf.Abs(direction.x);
+        float absY = Mathf.Abs(direction.y);
+
+        if (absX > absY)
+        {
+            // Horizontal is dominant
+            return direction.x > 0.1f
+                ? CharacterControllerScript.CharacterDirection.East
+                : CharacterControllerScript.CharacterDirection.West;
+        }
+        else
+        {
+            // Vertical is dominant
+            return direction.y > 0.1f
+                ? CharacterControllerScript.CharacterDirection.North
+                : CharacterControllerScript.CharacterDirection.South;
+        }
+    }
+
+
     private void OnDisable()
     {
-        //GameManager.Instance.NPCTimeChanged -= adjustSpeed;
+        GameManager.Instance.NPCTimeChanged -= adjustSpeed;
     }
 
     private void ApplyForcedStateIfAny()
@@ -138,13 +214,19 @@ public class NPCMovement : MonoBehaviour
             forceMoving = false;
         }
 
-        if (forceStationary) state = NpcState.Stationary;
-        else if (forceMoving) state = NpcState.Moving;
+        if (forceStationary) SetNPCState(NpcState.Stationary);
+        else if (forceMoving) SetNPCState(NpcState.Moving);
+    }
+
+    void SetNPCState(NpcState newState)
+    {
+        state = newState;
+        NPCStateChanged.Invoke(state);
     }
 
     private void ApplyForcesToState()
     {
-        if (state == NpcState.Stationary) 
+        if (state == NpcState.Stationary)
         {
             agent.ResetPath();
         }
@@ -192,7 +274,7 @@ public class NPCMovement : MonoBehaviour
                 candidates = allowed; // If no other candidates, allow picking the same one
             }
         }
-        currentTarget = candidates[Random.Range(0, candidates.Count)];
+        currentTarget = candidates[UnityEngine.Random.Range(0, candidates.Count)];
         currentRoomId = currentTarget.roomId;
         agent.speed = moveSpeed * GameManager.Instance.NPCTime;
 

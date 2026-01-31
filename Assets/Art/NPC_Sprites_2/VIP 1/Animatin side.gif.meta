@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,89 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0175-Sheet_0
+      name: Animatin side_0
       rect:
         serializedVersion: 2
-        x: 136
-        y: 18
-        width: 270
-        height: 721
+        x: 0
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6cbef2eb7ad106610800000000000000
-      internalID: 1612321272886193094
+      spriteID: 80bbd563e4850a7439c20b11f18866cb
+      internalID: 1492972230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0175-Sheet_1
+      name: Animatin side_1
       rect:
         serializedVersion: 2
-        x: 663
-        y: 11
-        width: 271
-        height: 722
+        x: 512
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5bc712474140b1290800000000000000
-      internalID: -7918731033906676555
+      spriteID: 5914b1ef3c2ff384bb2cfa670153c3a8
+      internalID: 310198861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0175-Sheet_2
+      name: Animatin side_2
       rect:
         serializedVersion: 2
-        x: 1158
-        y: 18
-        width: 272
-        height: 720
+        x: 1024
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2a60ffcc405694640800000000000000
-      internalID: 5064690327248373410
+      spriteID: 8e40baa34e268c8439951add1153802c
+      internalID: 1762151026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0175-Sheet_3
+      name: Animatin side_3
       rect:
         serializedVersion: 2
-        x: 1657
-        y: 17
-        width: 269
-        height: 713
+        x: 1536
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99c52f78d66806f90800000000000000
-      internalID: -6962417218924421991
+      spriteID: ec11f1b7191903147b5c7c9b0c975754
+      internalID: -311762212
       vertices: []
       indices: 
       edges: []
@@ -210,12 +210,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":768.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      IMG_0175-Sheet_0: 1612321272886193094
-      IMG_0175-Sheet_1: -7918731033906676555
-      IMG_0175-Sheet_2: 5064690327248373410
-      IMG_0175-Sheet_3: -6962417218924421991
+      Animatin side_0: 1492972230
+      Animatin side_1: 310198861
+      Animatin side_2: 1762151026
+      Animatin side_3: -311762212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

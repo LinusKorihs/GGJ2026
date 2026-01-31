@@ -37,8 +37,6 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
     bool _maskingMinigameRunning = false;
 
 
-
-
     void Update()
     {
         //continously calculate nearest target if we have more than one target
@@ -187,8 +185,9 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     void ApplyMaskEffects(MaskData mask)
     {
-        CharacterControllerScript.Instance.SetCharacterSprite(CurrentMask.maskSprite);
-        _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
+        CharacterControllerScript.Instance.SetCharacterSprite(CurrentMask.MaskSprites);
+        _maskingVisuals.UpdateVisuals(mask.ScreenTint, mask.ShouldTintScreen);
+        CharacterControllerScript.Instance.UpdateAnimator(CurrentMask.WalkingController);
     }
 
 
