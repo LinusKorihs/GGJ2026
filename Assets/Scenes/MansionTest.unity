@@ -180,11 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b5e1ac66394d404e8ac13dc29a2a003, type: 3}
---- !u!1 &28800223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4792407323123833446, guid: 3b5e1ac66394d404e8ac13dc29a2a003, type: 3}
-  m_PrefabInstance: {fileID: 28800222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &49520964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,17 +1036,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.21100001, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &144014204 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7873287967217917337, guid: 5eaf34f0aec272c46b105ee6aaa1562a, type: 3}
-  m_PrefabInstance: {fileID: 2104246284}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05951d84fb799804bacffda8f582f8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathScreen
 --- !u!114 &151567762 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3026722664709957203, guid: 54444f61449ca2e4a8a1852d19dddfcd, type: 3}
@@ -13296,10 +13280,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 584405691944784952, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
-      propertyPath: _minigameCamera
-      value: 
-      objectReference: {fileID: 28800223}
     - target: {fileID: 6041611923524584047, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: m_Name
       value: CharacterController
@@ -13344,10 +13324,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7510492888211665662, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
-      propertyPath: _deathScreenObject
-      value: 
-      objectReference: {fileID: 144014204}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

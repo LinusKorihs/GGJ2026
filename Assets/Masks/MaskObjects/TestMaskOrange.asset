@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
+  m_Name: TestMaskOrange
+  m_EditorClassIdentifier: Assembly-CSharp::MaskData
+  MaskId: Orange
+  MaskSprites:
+    NSprite: {fileID: -2044846708230864949, guid: 43c16c8ca54065542ab6f4cbcb7eaf26, type: 3}
+    SSprite: {fileID: 7009559002101053919, guid: 63a8b229729a9224cbcf31d2157c4fff, type: 3}
+    OSprite: {fileID: 7135170211332021850, guid: d9dbf722f8aca9f41a7c2293a01e570e, type: 3}
+    WSprite: {fileID: -880920990595385344, guid: 898f0ad653cb43b469fa43ca3345d80c, type: 3}
+  ScreenTint: {r: 0.62352943, g: 0.20784315, b: 0.015686275, a: 0.40392157}
+  ShouldTintScreen: 1

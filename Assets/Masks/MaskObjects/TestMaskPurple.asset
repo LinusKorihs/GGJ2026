@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
-  m_Name: EntryMask
+  m_Name: TestMaskPurple
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
-  MaskId: EntryMask
+  MaskId: Purple
   MaskSprites:
-    NSprite: {fileID: 7910937577428929581, guid: ad1420fe60a4f7544b278ffca5fb70ab, type: 3}
-    SSprite: {fileID: -2518482534156910293, guid: 51531b4714886a541ab08975c4e97eb3, type: 3}
+    NSprite: {fileID: -8476613740524126668, guid: 41cdc2a6b9d9f8741a6c42fede362b65, type: 3}
+    SSprite: {fileID: -6154215281419720663, guid: e4d03cf84def2a94590888d059389a26, type: 3}
     OSprite: {fileID: 8167072658223990604, guid: 18c5aebc494e4164faf573b7e2115b68, type: 3}
     WSprite: {fileID: -1983631219958958264, guid: 44d40e19995558142baae2f6ef42916b, type: 3}
-  ScreenTint: {r: 0, g: 0, b: 0, a: 0}
-  ShouldTintScreen: 0
+  ScreenTint: {r: 0.2784314, g: 0.015686275, b: 0.23529413, a: 0.3882353}
+  ShouldTintScreen: 1

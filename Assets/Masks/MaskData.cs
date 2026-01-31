@@ -1,13 +1,24 @@
 using UnityEngine;
 
+[System.Serializable]
+public class CharSprites
+{
+    public Sprite NSprite;
+    public Sprite SSprite;
+    public Sprite OSprite;
+    public Sprite WSprite;
+}
+
 [CreateAssetMenu(menuName = "Game/Mask")]
 public class MaskData : ScriptableObject
 {
-    public string maskId;
 
-    public Sprite maskSprite;
 
-    public Color screenTint = Color.clear;
-    
-    public bool shouldTintScreen = false;
+    public string MaskId;
+
+    public CharSprites MaskSprites;
+
+    public Color ScreenTint = Color.clear;
+
+    public bool ShouldTintScreen = false;
 }

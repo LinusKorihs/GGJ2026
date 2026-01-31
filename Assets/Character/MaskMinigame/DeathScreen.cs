@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class DeathScreen : MonoBehaviour
 {
     [SerializeField] GameObject _deathPrefab;
@@ -26,12 +27,12 @@ public class DeathScreen : MonoBehaviour
         if (TESTINGTRIGGER)
         {
             TESTINGTRIGGER = false;
-            SetupDeathAnimation(null, Vector3.one);
+            SetupDeathAnimation(null, CharacterControllerScript.CharacterDirection.East);
         }
 
     }
 
-    public void SetupDeathAnimation(MaskData maskData, Vector3 lookDirection)
+    public void SetupDeathAnimation(MaskData maskData, CharacterControllerScript.CharacterDirection lookDirection)
     {
         _deathPrefab.SetActive(true);
         _deathCamera.SetActive(true);
@@ -51,15 +52,46 @@ public class DeathScreen : MonoBehaviour
         ShowDeathText();
     }
 
-    void SwapOutSprites(MaskData maskData, Vector3 lookDirection)
+    void SwapOutSprites(MaskData maskData, CharacterControllerScript.CharacterDirection lookDirection)
     {
-        if (maskData != null)
-            _topSprite.sprite = maskData.maskSprite;
-        _topSprite.transform.localScale = lookDirection;
+        //early out if we dont have maskData
+        if (maskData == null)
+            return;
 
-        if (maskData != null)
-            _bottomSprite.sprite = maskData.maskSprite;
-        _bottomSprite.transform.localScale = lookDirection;
+        Sprite selectedSprite;
+        Vector3 lookVector = Vector3.one;
+
+        switch (lookDirection)
+        {
+            case CharacterControllerScript.CharacterDirection.North:
+                selectedSprite = maskData.MaskSprites.NSprite;
+                break;
+
+            case CharacterControllerScript.CharacterDirection.South:
+                selectedSprite = maskData.MaskSprites.SSprite;
+                break;
+
+            case CharacterControllerScript.CharacterDirection.West:
+                selectedSprite = maskData.MaskSprites.WSprite;
+                //only overwrite with flipped for West Sprite
+                lookVector = new Vector3(-1,1,1);
+                break;
+
+            case CharacterControllerScript.CharacterDirection.East:
+                selectedSprite = maskData.MaskSprites.OSprite;
+                break;
+
+            default:
+                selectedSprite = maskData.MaskSprites.OSprite;
+                break;
+        }
+
+
+        _topSprite.sprite = selectedSprite;
+        _bottomSprite.sprite = selectedSprite;
+        
+        _topSprite.transform.localScale = lookVector;
+        _bottomSprite.transform.localScale = lookVector;
     }
 
     void StartParticles()

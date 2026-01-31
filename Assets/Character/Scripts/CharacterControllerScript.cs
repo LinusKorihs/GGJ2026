@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-    public enum CharacterDirection { West, East, South }
+    public enum CharacterDirection { West, East, South, North }
 
     [SerializeField]
     CharacterVisual _characterVisual;
@@ -69,11 +69,7 @@ public class CharacterControllerScript : MonoBehaviour
 
         _deathScreenObject.gameObject.SetActive(true);
 
-        Vector3 lookDirection = _characterDirection == CharacterDirection.West
-         ? new Vector3(-1, 1, 1)
-         : Vector3.one;
-
-        _deathScreenObject.SetupDeathAnimation(_maskingSystem.CurrentMask, lookDirection);
+        _deathScreenObject.SetupDeathAnimation(_maskingSystem.CurrentMask, _characterDirection);
         _deathUIGameObject.SetActive(true);
     }
 
@@ -171,9 +167,9 @@ public class CharacterControllerScript : MonoBehaviour
             _characterVisual.SetCharacterDirection(_characterDirection);
     }
 
-    public void SetCharacterSprite(Sprite sprite)
+    public void SetCharacterSprite(CharSprites sprites)
     {
-        _characterVisual.UpdateCharacterSprite(sprite);
+        _characterVisual.UpdateCharacterSprite(sprites, _characterDirection);
     }
 }
 

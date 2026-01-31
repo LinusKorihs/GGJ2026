@@ -7,11 +7,8 @@ public class CharacterVisual : MonoBehaviour
     [SerializeField]
     Transform _characterSprite;
 
-    [SerializeField]
-    Sprite _eastWestSprite;
+    CharSprites _charSprites;
 
-    [SerializeField]
-    Sprite _southSprite;
 
     SpriteRenderer _characterSpriteRenderer;
 
@@ -26,25 +23,27 @@ public class CharacterVisual : MonoBehaviour
         switch (direction)
         {
             case CharacterControllerScript.CharacterDirection.West:
-                _characterSprite.localScale = new Vector3(-1, 1, 1);
-                _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _charSprites.WSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
-                _characterSprite.localScale = new Vector3(1, 1, 1);
-                _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _charSprites.OSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.South:
-                _characterSprite.localScale = new Vector3(1, 1, 1);
-                _characterSpriteRenderer.sprite = _southSprite;
+                _characterSpriteRenderer.sprite = _charSprites.SSprite;
+                break;
+
+            case CharacterControllerScript.CharacterDirection.North:
+                _characterSpriteRenderer.sprite = _charSprites.NSprite;
                 break;
         }
     }
 
-    public void UpdateCharacterSprite(Sprite sprite)
+    public void UpdateCharacterSprite(CharSprites newSprites, CharacterControllerScript.CharacterDirection characterDirection)
     {
-        _characterSpriteRenderer.sprite = sprite;
+        _charSprites = newSprites;
+        SetCharacterDirection(characterDirection);
     }
 
 }
