@@ -278,7 +278,6 @@ public class NPCMovement : MonoBehaviour
         currentRoomId = currentTarget.roomId;
         agent.speed = moveSpeed * GameManager.Instance.NPCTime;
 
-
         if (!agent.isOnNavMesh)
         {
             if (debugLogs) Debug.LogWarning($"{name} is not on NavMesh -> trying snap before SetDestination");
