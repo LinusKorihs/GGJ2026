@@ -8,6 +8,7 @@ public class WayPoint : MonoBehaviour
     [Header("Allowed NPC Types")]
     public bool guest = true;
     public bool waiter = true;
+    public bool vip = false;
 
     public bool Allows(NPCType.Type type)
     {
