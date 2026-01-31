@@ -22,6 +22,7 @@ public class NPCPatience : MonoBehaviour
     private bool hasCaught;
 
     public float Patience => patience;
+    public float Normalized => Mathf.Approximately(patienceMax, 0f) ? 0f : Mathf.Clamp01(patience / patienceMax);
     public bool HasCaught => hasCaught;
 
     private void Awake()
@@ -45,7 +46,8 @@ public class NPCPatience : MonoBehaviour
 
         patience = Mathf.Clamp(patience, 0f, patienceMax);
 
-        if (debugLogs && Mathf.Abs(before - patience) > 0.01f) Debug.Log($"[NPCPatience:{name}] {(seeing ? "+" : "-")} -> {patience:0.0}/{patienceMax}", this);
+        if (debugLogs && Mathf.Abs(before - patience) > 0.01f)
+            Debug.Log($"[NPCPatience:{name}] {(seeing ? "+" : "-")} -> {patience:0.0}/{patienceMax}", this);
 
         if (patience >= caughtThreshold)
         {
