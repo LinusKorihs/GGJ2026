@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC VIP Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3800280456704902633, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8408234099067509364, guid: df005fabd7297e843a88be4b1682c088, type: 3}
     - target: {fileID: 4078006655855721912, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: allWaypoints.Array.size
       value: 12
@@ -22,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4e390d0ae6e39af45925c57eacd3525f, type: 2}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.02
+      value: -2.4094038
       objectReference: {fileID: 0}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.86
+      value: 6.464958
       objectReference: {fileID: 0}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.z
