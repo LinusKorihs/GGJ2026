@@ -10,7 +10,8 @@ public class CharacterControllerScript : MonoBehaviour
     CharacterVisual _characterVisual;
     [SerializeField] MaskingSystem _maskingSystem;
 
-    CharacterDirection _characterDirection;
+    // TODO Set this depending on in which direction our model faces at start
+    CharacterDirection _characterDirection = CharacterDirection.East;
 
     public InputActionAsset _actions;
 

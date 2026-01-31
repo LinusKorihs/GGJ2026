@@ -192,5 +192,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
     }
 
+    
+
     #endregion
 }
