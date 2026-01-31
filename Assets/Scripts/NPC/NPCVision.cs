@@ -34,26 +34,19 @@ public class NPCVision : MonoBehaviour
 
     public bool requirePlayerTagInTrigger = true;
 
-    [Header("Patience")]
-    [SerializeField] private float patience = 0f;
-    public float patienceGainPerSecond = 35f;
-    public float patienceLossPerSecond = 25f;
-    public float patienceMax = 100f;
-    public float caughtThreshold = 100f;
-
     [Header("Events")]
-    public UnityEvent onCaught;
+    public UnityEvent onPlayerSeen;
+    public UnityEvent onPlayerLost;
 
     [Header("Debug")]
     public bool debugLogs = false;
-    public bool debugGizmos = true;
-    public bool debugRadiusGizmo = false;
 
     // Runtime
     private Transform player;
     private float nextScanTime;
+
     private bool isSeeingPlayer;
-    private bool hasCaught;
+    private bool lastSeeingPlayer;
 
     private NavMeshAgent agent;
     private Vector2 currentFacing;
@@ -62,7 +55,6 @@ public class NPCVision : MonoBehaviour
     private bool playerInsideTrigger;
     private Collider2D lastPlayerColliderInTrigger;
 
-    public float Patience => patience;
     public bool IsSeeingPlayer => isSeeingPlayer;
 
     private void Awake()
@@ -79,47 +71,35 @@ public class NPCVision : MonoBehaviour
 
         UpdateTriggerConeShape();
 
-        if (debugLogs)
-        {
-            Log($"Init | Player={(player != null)} | Agent={(agent != null)} | TriggerCone={useTriggerCone}");
-        }
+        if (debugLogs) Log($"Init | Player={(player != null)} | Agent={(agent != null)} | TriggerCone={useTriggerCone}");
     }
 
     private void Update()
     {
-        if (hasCaught) return;
-
         if (useTriggerCone) UpdateTriggerConeShape();
 
         if (Time.time >= nextScanTime)
         {
             nextScanTime = Time.time + Mathf.Max(0.02f, scanInterval);
+
             isSeeingPlayer = ScanConeForPlayer2D();
-        }
 
-        UpdatePatience(Time.deltaTime);
+            // Edge-trigger events
+            if (isSeeingPlayer != lastSeeingPlayer)
+            {
+                lastSeeingPlayer = isSeeingPlayer;
 
-        if (!hasCaught && patience >= caughtThreshold)
-        {
-            hasCaught = true;
-            patience = caughtThreshold;
-            Log("CAUGHT!", true);
-            onCaught?.Invoke();
-        }
-    }
-
-    private void UpdatePatience(float dt)
-    {
-        float before = patience;
-
-        if (isSeeingPlayer) patience += patienceGainPerSecond * dt;
-        else if (patience > 0f) patience -= patienceLossPerSecond * dt;
-
-        patience = Mathf.Clamp(patience, 0f, patienceMax);
-
-        if (debugLogs && Mathf.Abs(before - patience) > 0.01f)
-        {
-            Log($"Patience {(isSeeingPlayer ? "+" : "-")} -> {patience:0.0}/{patienceMax}. Currently {(isSeeingPlayer ? "SEEING" : "NOT SEEING")} player.");
+                if (isSeeingPlayer)
+                {
+                    if (debugLogs) Log("Player SEEN -> invoke onPlayerSeen");
+                    onPlayerSeen?.Invoke();
+                }
+                else
+                {
+                    if (debugLogs) Log("Player LOST -> invoke onPlayerLost");
+                    onPlayerLost?.Invoke();
+                }
+            }
         }
     }
 
@@ -134,41 +114,40 @@ public class NPCVision : MonoBehaviour
 
         Vector2 origin = GetOriginWorld2D();
 
-        if (useTriggerCone)
+        if (!useTriggerCone) return false;
+
+        if (!playerInsideTrigger) return false;
+
+        Vector2 targetPos = lastPlayerColliderInTrigger != null ? (Vector2)lastPlayerColliderInTrigger.bounds.center : (Vector2)player.position;
+
+        Vector2 dir = targetPos - origin;
+        float dist = dir.magnitude;
+        if (dist <= 0.001f) return true;
+
+        dir /= dist;
+
+        // LOS check
+        if (occlusionLayerMask.value != 0)
         {
-            if (!playerInsideTrigger) return false;
-
-            Vector2 targetPos = lastPlayerColliderInTrigger != null ? lastPlayerColliderInTrigger.bounds.center : (Vector2)player.position;
-
-            Vector2 dir = targetPos - origin;
-            float dist = dir.magnitude;
-            if (dist <= 0.001f) return true;
-
-            dir /= dist;
-
-            if (occlusionLayerMask.value != 0)
+            RaycastHit2D hit = Physics2D.Raycast(origin, dir, dist, occlusionLayerMask);
+            if (hit.collider != null)
             {
-                RaycastHit2D hit = Physics2D.Raycast(origin, dir, dist, occlusionLayerMask);
-                if (hit.collider != null)
-                {
-                    if (debugLogs) Log($"LOS blocked by {hit.collider.name}");
-                    return false;
-                }
+                if (debugLogs) Log($"LOS blocked by {hit.collider.name}");
+                return false;
             }
-
-            return true;
         }
-        return false;
+
+        return true;
     }
 
-    private Vector2 GetOriginWorld2D()
+    public Vector2 GetOriginWorld2D()
     {
         Vector3 o = transform.TransformPoint(localOriginOffset);
         o.y += originHeightOffset;
         return new Vector2(o.x, o.y);
     }
 
-    private Vector2 GetFacing2D()
+    public Vector2 GetFacing2D()
     {
         if (!useMovementFacing || agent == null) return currentFacing.sqrMagnitude > 0.0001f ? currentFacing : Vector2.up;
 
@@ -183,6 +162,7 @@ public class NPCVision : MonoBehaviour
 
             if (currentFacing.sqrMagnitude > 0.001f) currentFacing.Normalize();
         }
+
         return currentFacing;
     }
 
@@ -196,8 +176,7 @@ public class NPCVision : MonoBehaviour
         Vector3 localDir3 = transform.InverseTransformDirection(new Vector3(facingWorld.x, facingWorld.y, 0f));
         Vector2 facingLocal = new Vector2(localDir3.x, localDir3.y).normalized;
 
-        if (facingLocal.sqrMagnitude < 0.001f)
-            facingLocal = Vector2.up;
+        if (facingLocal.sqrMagnitude < 0.001f) facingLocal = Vector2.up;
 
         float half = viewAngle * 0.5f;
         int seg = Mathf.Max(2, coneSegments);
@@ -212,7 +191,6 @@ public class NPCVision : MonoBehaviour
             Vector2 dir = Rotate2D(facingLocal, ang).normalized;
             pts[i + 1] = originLocal + dir * viewDistance;
         }
-
         coneCollider.SetPath(0, pts);
     }
 
@@ -236,53 +214,19 @@ public class NPCVision : MonoBehaviour
         playerInsideTrigger = false;
         lastPlayerColliderInTrigger = null;
 
-        if (debugLogs) Log($"Player EXIT cone");
+        if (debugLogs) Log("Player EXIT cone");
     }
 
-    private void Log(string msg, bool error = false)
+    private void Log(string msg)
     {
-        string prefix = $"[NPCVision:{transform.parent?.name ?? name}] ";
-        if (error) Debug.LogWarning(prefix + msg, this);
-        else if (debugLogs) Debug.Log(prefix + msg, this);
+        Debug.Log($"[NPCVision:{transform.parent?.name ?? name}] {msg}", this);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (!debugGizmos) return;
-
-        Vector2 origin = Application.isPlaying ? GetOriginWorld2D() : (Vector2)transform.position;
-
-        if (debugRadiusGizmo)
-            DrawWireCircle(origin, viewDistance, 32);
-
-        Vector2 facing = Application.isPlaying ? GetFacing2D() : fallbackFacing.normalized;
-        float half = viewAngle * 0.5f;
-
-        Vector2 left = Rotate2D(facing, -half);
-        Vector2 right = Rotate2D(facing, half);
-
-        Gizmos.DrawLine(origin, origin + left * viewDistance);
-        Gizmos.DrawLine(origin, origin + right * viewDistance);
-        Gizmos.DrawLine(origin, origin + facing * viewDistance);
-    }
-
-    private static Vector2 Rotate2D(Vector2 v, float degrees)
+    public static Vector2 Rotate2D(Vector2 v, float degrees)
     {
         float rad = degrees * Mathf.Deg2Rad;
         float sin = Mathf.Sin(rad);
         float cos = Mathf.Cos(rad);
         return new Vector2(cos * v.x - sin * v.y, sin * v.x + cos * v.y);
-    }
-
-    private static void DrawWireCircle(Vector2 center, float radius, int segments)
-    {
-        Vector3 prev = center + Vector2.right * radius;
-        for (int i = 1; i <= segments; i++)
-        {
-            float t = (i / (float)segments) * Mathf.PI * 2f;
-            Vector3 next = center + new Vector2(Mathf.Cos(t), Mathf.Sin(t)) * radius;
-            Gizmos.DrawLine(prev, next);
-            prev = next;
-        }
     }
 }
