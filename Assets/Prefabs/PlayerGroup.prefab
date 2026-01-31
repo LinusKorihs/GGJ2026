@@ -198,6 +198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterController
       objectReference: {fileID: 0}
+    - target: {fileID: 6041611923524584047, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041611923524584047, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6878653053134261328, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.38711

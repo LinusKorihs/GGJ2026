@@ -55,6 +55,8 @@ public class NPCPatience : MonoBehaviour
             patience = caughtThreshold;
 
             if (debugLogs) Debug.LogWarning($"[NPCPatience:{name}] CAUGHT!", this);
+
+            CharacterControllerScript.Instance.PlayDeathScene();
             onCaught?.Invoke();
         }
     }

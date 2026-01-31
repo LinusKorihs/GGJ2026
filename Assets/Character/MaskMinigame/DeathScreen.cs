@@ -50,6 +50,7 @@ public class DeathScreen : MonoBehaviour
         StartAnimation();
         yield return new WaitForSeconds(0.3f);
         ShowDeathText();
+
     }
 
     void SwapOutSprites(MaskData maskData, CharacterControllerScript.CharacterDirection lookDirection)
@@ -74,7 +75,7 @@ public class DeathScreen : MonoBehaviour
             case CharacterControllerScript.CharacterDirection.West:
                 selectedSprite = maskData.MaskSprites.WSprite;
                 //only overwrite with flipped for West Sprite
-                lookVector = new Vector3(-1,1,1);
+                lookVector = new Vector3(-1, 1, 1);
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
@@ -89,7 +90,7 @@ public class DeathScreen : MonoBehaviour
 
         _topSprite.sprite = selectedSprite;
         _bottomSprite.sprite = selectedSprite;
-        
+
         _topSprite.transform.localScale = lookVector;
         _bottomSprite.transform.localScale = lookVector;
     }
@@ -119,6 +120,7 @@ public class DeathScreen : MonoBehaviour
             _deathTextGameObject.transform.localScale.y + _scalingPerTick,
             _deathTextGameObject.transform.localScale.z + _scalingPerTick);
         }
+        GameManager.Instance.IsGameOver = true;
     }
 
 
