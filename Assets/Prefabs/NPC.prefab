@@ -246,6 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3771631462558249981}
   - component: {fileID: 8448038620465379283}
+  - component: {fileID: 4911977829869877360}
   m_Layer: 8
   m_Name: Eyes
   m_TagString: Untagged
@@ -284,14 +285,21 @@ MonoBehaviour:
   viewAngle: 90
   localOriginOffset: {x: 0, y: 0, z: 0}
   originHeightOffset: 0
+  useMovementFacing: 1
+  fallbackFacing: {x: 0, y: 1}
+  minMoveSqrMagnitudeToUpdateFacing: 0.01
+  facingSmoothing: 12
   playerTag: Player
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   occlusionLayerMask:
     serializedVersion: 2
     m_Bits: 0
   scanInterval: 0.1
+  useTriggerCone: 1
+  coneSegments: 2
+  requirePlayerTagInTrigger: 1
   patience: 0
   patienceGainPerSecond: 35
   patienceLossPerSecond: 25
@@ -303,3 +311,55 @@ MonoBehaviour:
   debugLogs: 1
   debugGizmos: 1
   debugRadiusGizmo: 0
+--- !u!60 &4911977829869877360
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964580068479559382}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}
+  m_UseDelaunayMesh: 1
