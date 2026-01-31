@@ -28,6 +28,7 @@ public class NPCVisuals : MonoBehaviour
 
 
         _ownMovement.NPCStateChanged += NPCStateChanged;
+        SetNewAnimator(_ownMaskGiver.CarriedMask.WalkingController);
     }
 
     void NPCStateChanged(NPCMovement.NpcState state)

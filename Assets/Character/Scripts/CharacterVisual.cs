@@ -95,6 +95,9 @@ public class CharacterVisual : MonoBehaviour
 
     public void StopWalk()
     {
+        if (!_isInWalkingAnim)
+            return;
+            
         _characterStillSpriteRenderer.gameObject.SetActive(true);
         _characterAnimationSpriteRenderer.gameObject.SetActive(false);
         _isInWalkingAnim = false;
