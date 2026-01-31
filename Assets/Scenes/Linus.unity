@@ -8704,6 +8704,7 @@ MonoBehaviour:
   currentRoomId: 1
   currentTarget: {fileID: 55352477}
   debugLogs: 1
+  isStaring: 0
 --- !u!58 &931230493
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17110,65 +17111,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 363336990}
     m_Modifications:
     - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: debugLogs
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 495731448416757476, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
     - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 569396206910617260, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 856763091}
     - target: {fileID: 1618144629921088737, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: currentTarget
       value: 
@@ -17321,18 +17270,6 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[17]'
       value: 
       objectReference: {fileID: 954737931}
-    - target: {fileID: 1718882174803835637, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 2466853133316662269, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 2533618391436633517, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
     - target: {fileID: 3276176250289039068, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: currentTarget
       value: 
@@ -17449,70 +17386,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4111316661434299648, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 4361007582235728953, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459315862799992025, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396937171946754715, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6516771418926297246, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: currentTarget
       value: 
@@ -17589,82 +17470,18 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[17]'
       value: 
       objectReference: {fileID: 954737931}
-    - target: {fileID: 6546423159146323650, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 6619806398656859786, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
     - target: {fileID: 6765343980848871364, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: m_Name
       value: NPCs
       objectReference: {fileID: 0}
-    - target: {fileID: 6979976744164355255, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041974720536786007, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219590435788660078, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7674573828216867797, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 7963406133636493254, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: currentTarget
       value: 
@@ -17970,61 +17787,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 954737931}
     - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 856763091}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085536676270837187, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
       propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 856763091}
     - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverLoading, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152284359367330707, guid: 20d6c277f7f79f045a3093d9d60bf2cf, type: 3}
-      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      propertyPath: onCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 856763091}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
