@@ -37,8 +37,6 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
     bool _maskingMinigameRunning = false;
 
 
-
-
     void Update()
     {
         //continously calculate nearest target if we have more than one target

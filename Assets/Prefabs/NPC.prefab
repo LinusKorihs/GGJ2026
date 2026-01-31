@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1806494839729260029}
   - component: {fileID: 5573377947763089688}
   - component: {fileID: 8198401373190778164}
+  - component: {fileID: 6468223222248251149}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -29,12 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518821346456950514}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.71026, y: -23.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3771631462558249981}
+  - {fileID: 3650608360135809896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6654231857698441889
@@ -86,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5427291976445804591, guid: ef305a3777f8e4041b1b22796de9da2a, type: 3}
+  m_Sprite: {fileID: 8167072658223990604, guid: 18c5aebc494e4164faf573b7e2115b68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -201,7 +203,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.584, y: 1.45}
+    oldSize: {x: 1.024, y: 1.536}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -236,6 +238,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6468223222248251149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518821346456950514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7b1f7ce1359bc41bd2e040ad032e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCVisuals
+  _ownMaskGiver: {fileID: 9114722711981829710}
+  _characterSpriteRenderer: {fileID: 6654231857698441889}
 --- !u!1 &6964580068479559382
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,3 +379,76 @@ PolygonCollider2D:
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
   m_UseDelaunayMesh: 1
+--- !u!1001 &8245124004465058210
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7090127769920568452}
+    m_Modifications:
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098723535234192672, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+      propertyPath: m_Name
+      value: MaskGiver
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+--- !u!4 &3650608360135809896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4667137064521235146, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+  m_PrefabInstance: {fileID: 8245124004465058210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9114722711981829710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 869916674352156652, guid: 15793e97bc9913d4e9d93453c0733a62, type: 3}
+  m_PrefabInstance: {fileID: 8245124004465058210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becb7b545b9092943bed65eba1b33f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskHolder

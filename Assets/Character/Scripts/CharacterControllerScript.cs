@@ -52,6 +52,16 @@ public class CharacterControllerScript : MonoBehaviour
         _useAction.performed += OnUseAction;
     }
 
+    void Start()
+    {
+        SetupCharacterVisuals();
+    }
+
+    void SetupCharacterVisuals()
+    {
+        _characterVisual.AssignCharSprites(_maskingSystem.CurrentMask.MaskSprites);
+    }
+
     void OnEnable()
     {
         _actions.FindActionMap("Player").Enable();
@@ -159,8 +169,12 @@ public class CharacterControllerScript : MonoBehaviour
         else if (direction.x <= -_inputDeadzone)
             _characterDirection = CharacterDirection.West;
 
+        //give priority to east & west
         else if (direction.y <= -_inputDeadzone && direction.y < (Mathf.Abs(direction.x) * -1))
             _characterDirection = CharacterDirection.South;
+
+        else if (direction.y >= _inputDeadzone && direction.y > direction.x)
+            _characterDirection = CharacterDirection.North;
 
         //only call visual, if we actually switched direction
         if (oldDirection != (int)_characterDirection)

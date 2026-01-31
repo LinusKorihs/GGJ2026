@@ -4,18 +4,16 @@ using UnityEngine;
 public class CharacterVisual : MonoBehaviour
 {
 
-    [SerializeField]
-    Transform _characterSprite;
-
     CharSprites _charSprites;
 
 
+    [SerializeField]
     SpriteRenderer _characterSpriteRenderer;
 
 
-    void Awake()
+    public void AssignCharSprites(CharSprites newCharSprites)
     {
-        _characterSpriteRenderer = this.GetComponent<SpriteRenderer>();
+        _charSprites = newCharSprites;
     }
 
     public void SetCharacterDirection(CharacterControllerScript.CharacterDirection direction)
@@ -27,7 +25,7 @@ public class CharacterVisual : MonoBehaviour
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
-                _characterSpriteRenderer.sprite = _charSprites.OSprite;
+                _characterSpriteRenderer.sprite = _charSprites.ESprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.South:
@@ -38,6 +36,8 @@ public class CharacterVisual : MonoBehaviour
                 _characterSpriteRenderer.sprite = _charSprites.NSprite;
                 break;
         }
+
+
     }
 
     public void UpdateCharacterSprite(CharSprites newSprites, CharacterControllerScript.CharacterDirection characterDirection)

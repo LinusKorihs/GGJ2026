@@ -78,11 +78,11 @@ public class DeathScreen : MonoBehaviour
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
-                selectedSprite = maskData.MaskSprites.OSprite;
+                selectedSprite = maskData.MaskSprites.ESprite;
                 break;
 
             default:
-                selectedSprite = maskData.MaskSprites.OSprite;
+                selectedSprite = maskData.MaskSprites.ESprite;
                 break;
         }
 

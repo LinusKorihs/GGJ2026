@@ -5,7 +5,7 @@ public class CharSprites
 {
     public Sprite NSprite;
     public Sprite SSprite;
-    public Sprite OSprite;
+    public Sprite ESprite;
     public Sprite WSprite;
 }
 
@@ -17,6 +17,7 @@ public class MaskData : ScriptableObject
     public string MaskId;
 
     public CharSprites MaskSprites;
+    public CharSprites HighlightSprites;
 
     public Color ScreenTint = Color.clear;
 
