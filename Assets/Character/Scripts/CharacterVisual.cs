@@ -4,20 +4,16 @@ using UnityEngine;
 public class CharacterVisual : MonoBehaviour
 {
 
-    [SerializeField]
-    Transform _characterSprite;
+    CharSprites _charSprites;
+
 
     [SerializeField]
-    Sprite _eastWestSprite;
-
-    [SerializeField]
-    Sprite _southSprite;
-
     SpriteRenderer _characterSpriteRenderer;
 
-    void Awake()
+
+    public void AssignCharSprites(CharSprites newCharSprites)
     {
-        _characterSpriteRenderer = this.GetComponent<SpriteRenderer>();
+        _charSprites = newCharSprites;
     }
 
     public void SetCharacterDirection(CharacterControllerScript.CharacterDirection direction)
@@ -25,25 +21,29 @@ public class CharacterVisual : MonoBehaviour
         switch (direction)
         {
             case CharacterControllerScript.CharacterDirection.West:
-                _characterSprite.localScale = new Vector3(-1, 1, 1);
-                 _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _charSprites.WSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
-                _characterSprite.localScale = new Vector3(1, 1, 1);
-                  _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _charSprites.ESprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.South:
-                _characterSprite.localScale = new Vector3(1, 1, 1);
-                _characterSpriteRenderer.sprite = _southSprite;
+                _characterSpriteRenderer.sprite = _charSprites.SSprite;
+                break;
+
+            case CharacterControllerScript.CharacterDirection.North:
+                _characterSpriteRenderer.sprite = _charSprites.NSprite;
                 break;
         }
+
+
     }
 
-    public void UpdateCharacterSprite(Sprite sprite)
+    public void UpdateCharacterSprite(CharSprites newSprites, CharacterControllerScript.CharacterDirection characterDirection)
     {
-        _characterSpriteRenderer.sprite = sprite;
+        _charSprites = newSprites;
+        SetCharacterDirection(characterDirection);
     }
 
 }
