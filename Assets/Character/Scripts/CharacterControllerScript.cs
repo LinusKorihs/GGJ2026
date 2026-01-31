@@ -1,10 +1,11 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-    public enum CharacterDirection { West, East, South }
+    public enum CharacterDirection { West, East, South, North }
 
     [SerializeField]
     CharacterVisual _characterVisual;
@@ -22,9 +23,14 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] float _acceleration = 20f;
     [SerializeField] float _deceleration = 30f;
     [SerializeField] float _inputDeadzone = 0.1f;
+    [SerializeField] float _minVelocityForWalkAnim = 0.1f;
 
     [Header("Cooldown Time after Input Unlock")]
     [SerializeField] float _inputCooldownAfterUseEvent = 1f;
+
+
+    [SerializeField] DeathScreen _deathScreenObject;
+    [SerializeField] GameObject _deathUIGameObject;
 
 
     bool _inputsLocked = false;
@@ -48,6 +54,16 @@ public class CharacterControllerScript : MonoBehaviour
         _useAction.performed += OnUseAction;
     }
 
+    void Start()
+    {
+        SetupCharacterVisuals();
+    }
+
+    void SetupCharacterVisuals()
+    {
+        _characterVisual.AssignCharSprites(_maskingSystem.CurrentMask.MaskSprites);
+    }
+
     void OnEnable()
     {
         _actions.FindActionMap("Player").Enable();
@@ -57,6 +73,17 @@ public class CharacterControllerScript : MonoBehaviour
         _actions.FindActionMap("Player").Disable();
     }
 
+
+    public void PlayDeathScene()
+    {
+        LockControls();
+        GameManager.Instance.AdjustNPCTimeSpeed(0.01f);
+
+        _deathScreenObject.gameObject.SetActive(true);
+
+        _deathScreenObject.SetupDeathAnimation(_maskingSystem.CurrentMask, _characterDirection);
+        _deathUIGameObject.SetActive(true);
+    }
 
 
     public void LockControls()
@@ -92,13 +119,13 @@ public class CharacterControllerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(_onUseCooldown)
+        if (_onUseCooldown)
         {
             _currentCooldown -= Time.deltaTime;
-            if(_currentCooldown <= 0f)
+            if (_currentCooldown <= 0f)
                 _onUseCooldown = false;
         }
-        
+
 
 
         Vector2 currentVelocity = _ownRigidbody.linearVelocity;
@@ -122,6 +149,16 @@ public class CharacterControllerScript : MonoBehaviour
                 Vector2.MoveTowards(currentVelocity, targetVelocity, tempAcceleration * Time.fixedDeltaTime);
 
         SetCharacterDirection(moveDirection);
+        if (_ownRigidbody.linearVelocity.magnitude >= _minVelocityForWalkAnim)
+        {
+            _characterVisual.StartWalk(_characterDirection);
+        }
+        else
+        {
+            _characterVisual.StopWalk();
+            //force setting the sprite after walk ended
+            _characterVisual.SetCharacterDirection(_characterDirection);
+        }
     }
 
     Vector2 GetMoveDirection(Vector2 input)
@@ -130,6 +167,11 @@ public class CharacterControllerScript : MonoBehaviour
             return Vector2.zero;
 
         return input.normalized;
+    }
+
+    public void UpdateAnimator(AnimatorController animator)
+    {
+        _characterVisual.SetNewAnimator(animator);
     }
 
 
@@ -144,17 +186,21 @@ public class CharacterControllerScript : MonoBehaviour
         else if (direction.x <= -_inputDeadzone)
             _characterDirection = CharacterDirection.West;
 
+        //give priority to east & west
         else if (direction.y <= -_inputDeadzone && direction.y < (Mathf.Abs(direction.x) * -1))
             _characterDirection = CharacterDirection.South;
+
+        else if (direction.y >= _inputDeadzone && direction.y > direction.x)
+            _characterDirection = CharacterDirection.North;
 
         //only call visual, if we actually switched direction
         if (oldDirection != (int)_characterDirection)
             _characterVisual.SetCharacterDirection(_characterDirection);
     }
 
-    public void SetCharacterSprite(Sprite sprite)
+    public void SetCharacterSprite(CharSprites sprites)
     {
-        _characterVisual.UpdateCharacterSprite(sprite);
+        _characterVisual.UpdateCharacterSprite(sprites, _characterDirection);
     }
 }
 

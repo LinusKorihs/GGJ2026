@@ -42,5 +42,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SceneSort1
+    uniqueID: 3878142145
+    locked: 0
+  - name: SceneSort2
+    uniqueID: 3095916043
+    locked: 0
+  - name: Overdraw
+    uniqueID: 4008980303
+    locked: 0
   m_RenderingLayers:
   - Default
+  - SceneLayer1
+  - SceneLayer2
