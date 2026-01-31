@@ -75,6 +75,7 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), null);
             // no target , disable ui
             _maskingVisuals.SetUseActionHint(false);
+            _maskingVisuals.SetUseKillHint(false);
             return;
         }
 
@@ -104,6 +105,11 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
 
         // new target , enable ui
         _maskingVisuals.SetUseActionHint(true);
+
+        if (_currentTarget.tag == "VIP")
+            _maskingVisuals.SetUseKillHint(true);
+        else
+            _maskingVisuals.SetUseKillHint(false);
     }
 
     void UpdateTargetVisual(MaskGiver oldTarget, MaskGiver newTarget)
@@ -144,13 +150,11 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
         if (_currentTarget.GetComponentInParent<KillTarget>().IsKillTarget)
         {
             CharacterControllerScript.Instance.PlayTargetDeathScene(DeathScreen.DeathVersion.CorrectKill, _currentTarget.GetComponent<MaskGiver>().CarriedMask);
-            Debug.LogWarning("Win");
             return;
         }
         else
         {
             CharacterControllerScript.Instance.PlayTargetDeathScene(DeathScreen.DeathVersion.WrongKill, _currentTarget.GetComponent<MaskGiver>().CarriedMask);
-            Debug.LogWarning("Wrong Target killed - Lose");
             return;
         }
 

@@ -6,6 +6,7 @@ public class MaskingVisuals : MonoBehaviour
     [SerializeField] Image _tintImage;
 
     [SerializeField] Image _UIUseInputHint;
+    [SerializeField] Image _UIUseKilHint;
 
 
     void Start()
@@ -22,6 +23,11 @@ public class MaskingVisuals : MonoBehaviour
     public void SetUseActionHint(bool state)
     {
         _UIUseInputHint.gameObject.SetActive(state);
+    }
+
+     public void SetUseKillHint(bool state)
+    {
+        _UIUseKilHint.gameObject.SetActive(state);
     }
 
 }
