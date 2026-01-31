@@ -23,5 +23,6 @@ MonoBehaviour:
     SSprite: {fileID: 1386956593980406148, guid: f15842cea6bf9534784c695c4f021b6b, type: 3}
     ESprite: {fileID: 1443456566604677669, guid: 7968227131a18b648a9c6240e45ca5d9, type: 3}
     WSprite: {fileID: 5541081901727163194, guid: e42f084d108ca2542bfa0f134986ae46, type: 3}
+  WalkingController: {fileID: 9100000, guid: 0cc913c60b8d5734ab5cfddfadc1b40b, type: 2}
   ScreenTint: {r: 0, g: 0, b: 0, a: 0}
   ShouldTintScreen: 0

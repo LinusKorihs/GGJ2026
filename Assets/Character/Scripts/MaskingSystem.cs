@@ -187,6 +187,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
     {
         CharacterControllerScript.Instance.SetCharacterSprite(CurrentMask.MaskSprites);
         _maskingVisuals.UpdateVisuals(mask.ScreenTint, mask.ShouldTintScreen);
+        CharacterControllerScript.Instance.UpdateAnimator(CurrentMask.WalkingController);
     }
 
 

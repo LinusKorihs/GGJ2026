@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 07fe6812901193749b6d59a93199cf9f
+guid: e058aea6db07c8941be5c5ce1bce8fc7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5749343799682970700
-    second: IMG_0170_flip_0
+      213: -4032902545633110585
+    second: Animatin sideLeft_0
+  - first:
+      213: 3324606339408950781
+    second: Animatin sideLeft_1
+  - first:
+      213: -2109125520875890030
+    second: Animatin sideLeft_2
+  - first:
+      213: 5556347887522900322
+    second: Animatin sideLeft_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0170_flip_0
+      name: Animatin sideLeft_0
       rect:
         serializedVersion: 2
-        x: 105
-        y: 17
-        width: 329
-        height: 723
+        x: 0
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c44b2b779b5c9cf40800000000000000
-      internalID: 5749343799682970700
+      spriteID: 7c515c180804808c0800000000000000
+      internalID: -4032902545633110585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animatin sideLeft_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df57b76e9df532e20800000000000000
+      internalID: 3324606339408950781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animatin sideLeft_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a5b7d6381eab2e0800000000000000
+      internalID: -2109125520875890030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animatin sideLeft_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2696b4407fc1c1d40800000000000000
+      internalID: 5556347887522900322
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6767e8e6e809c5945ba8ea327f6dfba3
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +208,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":768.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      IMG_0170_flip_0: 5749343799682970700
+      Animatin sideLeft_0: -4032902545633110585
+      Animatin sideLeft_1: 3324606339408950781
+      Animatin sideLeft_2: -2109125520875890030
+      Animatin sideLeft_3: 5556347887522900322
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

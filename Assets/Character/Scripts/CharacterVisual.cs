@@ -1,4 +1,4 @@
-using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterVisual : MonoBehaviour
@@ -8,7 +8,15 @@ public class CharacterVisual : MonoBehaviour
 
 
     [SerializeField]
-    SpriteRenderer _characterSpriteRenderer;
+    SpriteRenderer _characterStillSpriteRenderer;
+
+    [SerializeField]
+    SpriteRenderer _characterAnimationSpriteRenderer;
+
+    [SerializeField] Animator _ownAnimator;
+
+    CharacterControllerScript.CharacterDirection _oldDirection;
+    bool _isInWalkingAnim;
 
 
     public void AssignCharSprites(CharSprites newCharSprites)
@@ -21,29 +29,76 @@ public class CharacterVisual : MonoBehaviour
         switch (direction)
         {
             case CharacterControllerScript.CharacterDirection.West:
-                _characterSpriteRenderer.sprite = _charSprites.WSprite;
+                _characterStillSpriteRenderer.sprite = _charSprites.WSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
-                _characterSpriteRenderer.sprite = _charSprites.ESprite;
+                _characterStillSpriteRenderer.sprite = _charSprites.ESprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.South:
-                _characterSpriteRenderer.sprite = _charSprites.SSprite;
+                _characterStillSpriteRenderer.sprite = _charSprites.SSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.North:
-                _characterSpriteRenderer.sprite = _charSprites.NSprite;
+                _characterStillSpriteRenderer.sprite = _charSprites.NSprite;
                 break;
         }
 
 
     }
 
+    public void SetNewAnimator(AnimatorController animator)
+    {
+        _ownAnimator.runtimeAnimatorController = animator;
+    }
+
     public void UpdateCharacterSprite(CharSprites newSprites, CharacterControllerScript.CharacterDirection characterDirection)
     {
         _charSprites = newSprites;
         SetCharacterDirection(characterDirection);
+    }
+
+    public void StartWalk(CharacterControllerScript.CharacterDirection direction)
+    {
+
+        //Early out, if our walking state and our direction are same as before to prevent restarting the anim over and over
+        if (_oldDirection == direction && _isInWalkingAnim)
+            return;
+
+        _characterStillSpriteRenderer.gameObject.SetActive(false);
+        _characterAnimationSpriteRenderer.gameObject.SetActive(true);
+
+
+        switch (direction)
+        {
+            case CharacterControllerScript.CharacterDirection.West:
+                _ownAnimator.SetTrigger("GoLeft");
+                break;
+
+            case CharacterControllerScript.CharacterDirection.East:
+                _ownAnimator.SetTrigger("GoRight");
+                break;
+
+            case CharacterControllerScript.CharacterDirection.South:
+                _ownAnimator.SetTrigger("GoSouth");
+                break;
+
+            case CharacterControllerScript.CharacterDirection.North:
+                _ownAnimator.SetTrigger("GoNorth");
+                break;
+        }
+
+        _oldDirection = direction;
+        _isInWalkingAnim = true;
+    }
+
+    public void StopWalk()
+    {
+        _characterStillSpriteRenderer.gameObject.SetActive(true);
+        _characterAnimationSpriteRenderer.gameObject.SetActive(false);
+        _isInWalkingAnim = false;
+        _ownAnimator.SetTrigger("Stop");
     }
 
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,7 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] float _acceleration = 20f;
     [SerializeField] float _deceleration = 30f;
     [SerializeField] float _inputDeadzone = 0.1f;
+    [SerializeField] float _minVelocityForWalkAnim = 0.1f;
 
     [Header("Cooldown Time after Input Unlock")]
     [SerializeField] float _inputCooldownAfterUseEvent = 1f;
@@ -147,6 +149,16 @@ public class CharacterControllerScript : MonoBehaviour
                 Vector2.MoveTowards(currentVelocity, targetVelocity, tempAcceleration * Time.fixedDeltaTime);
 
         SetCharacterDirection(moveDirection);
+        if (_ownRigidbody.linearVelocity.magnitude >= _minVelocityForWalkAnim)
+        {
+            _characterVisual.StartWalk(_characterDirection);
+        }
+        else
+        {
+            _characterVisual.StopWalk();
+            //force setting the sprite after walk ended
+            _characterVisual.SetCharacterDirection(_characterDirection);
+        }
     }
 
     Vector2 GetMoveDirection(Vector2 input)
@@ -155,6 +167,11 @@ public class CharacterControllerScript : MonoBehaviour
             return Vector2.zero;
 
         return input.normalized;
+    }
+
+    public void UpdateAnimator(AnimatorController animator)
+    {
+        _characterVisual.SetNewAnimator(animator);
     }
 
 
