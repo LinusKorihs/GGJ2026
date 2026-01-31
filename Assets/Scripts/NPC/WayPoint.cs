@@ -16,6 +16,7 @@ public class WayPoint : MonoBehaviour
         {
             NPCType.Type.Guest => guest,
             NPCType.Type.Staff => waiter,
+            NPCType.Type.VIP => vip,
             _ => false
         };
     }
