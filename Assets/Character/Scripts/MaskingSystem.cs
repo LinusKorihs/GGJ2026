@@ -174,8 +174,8 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         }
         else
         {
-            // TODO logic
-            ;
+            
+            Debug.LogWarning("EVENT LOST! GAME OVER BRO!");
         }
     }
 
@@ -192,7 +192,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
     }
 
-    
+
 
     #endregion
 }

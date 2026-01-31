@@ -2589,14 +2589,6 @@ PrefabInstance:
       propertyPath: _minigameCamera
       value: 
       objectReference: {fileID: 28800223}
-    - target: {fileID: 5691130863603109512, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
-      propertyPath: m_Padding.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5691130863603109512, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
-      propertyPath: m_Padding.z
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 6041611923524584047, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: m_Name
       value: CharacterController

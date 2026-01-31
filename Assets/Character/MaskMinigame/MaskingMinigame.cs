@@ -1,23 +1,33 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class MaskingMinigame : MonoBehaviour
 {
+    public InputActionAsset _actions;
     [SerializeField] GameObject _minigameCamera;
     [SerializeField] GameObject _maskingMinigameObject;
 
     [SerializeField] RectMask2D _uimask;
+    [SerializeField] Image _timerCircle;
+
+    [Header("Tweak these values for Event Settings")]
+    [SerializeField] float _eventDuration;
+    [SerializeField] float _percentageGainPerButtonPress = 0.1f;
 
     float _uiMaskMaxPadding;
 
     public Action<bool> OnEventFinishedSuccessful;
 
+    private InputAction _useAction;
+
     //hardcoded offset, so the camera dont just sit on the object
     Vector3 _cameraOffset = new Vector3(0f, 0f, -10f);
 
     bool _eventActive = false;
+    float _minigamePercent = 0f;
 
     void Awake()
     {
@@ -28,6 +38,9 @@ public class MaskingMinigame : MonoBehaviour
 
         //Rect Mask Right is Z for whatever reason
         _uiMaskMaxPadding = _uimask.padding.z;
+
+        _useAction = _actions.FindActionMap("Player").FindAction("Jump");
+        _useAction.performed += OnUseAction;
 
 
     }
@@ -46,50 +59,65 @@ public class MaskingMinigame : MonoBehaviour
         GameManager.Instance.SlowSpeed();
     }
 
+    void OnUseAction(InputAction.CallbackContext context)
+    {
+        //early out if event is not active
+        if (!_eventActive)
+            return;
+
+        //if event is active increase progress
+        _minigamePercent += _percentageGainPerButtonPress;
+    }
+
     public IEnumerator RunEvent()
     {
-
-        float minigamePercent = 0f;
+        float eventTimer = 0f;
+        _minigamePercent = 0f;
         _eventActive = true;
-        StartCoroutine(DelayedEventFinish());
+        bool eventSuccess = false;
 
         while (_eventActive)
         {
             yield return new WaitForSeconds(0.1f);
 
-            minigamePercent += 0.05f;
-            // minigame logic
+            eventTimer += 0.1f;
 
+            float timerPercent = eventTimer / _eventDuration;
 
-            SetProgressBarScale(minigamePercent);
+            SetTimerScale(timerPercent);
+            SetProgressBarScale(_minigamePercent);
 
-            if (minigamePercent >= 1)
+            if (_minigamePercent >= 1)
             {
+                //event win
                 _eventActive = false;
+                eventSuccess = true;
+                break;
+            }
+
+            if (eventTimer >= _eventDuration)
+            {
+                //event failed
+                _eventActive = false;
+                break;
             }
         }
 
 
 
-        // fail / success fork
-        EndMinigame();
+        EndMinigame(eventSuccess);
     }
 
-
-    IEnumerator DelayedEventFinish()
-    {
-        yield return new WaitForSeconds(2.0f);
-        _eventActive = false;
-    }
-
-    public void EndMinigame()
+    public void EndMinigame(bool eventSuccess)
     {
         _minigameCamera.SetActive(false);
         _maskingMinigameObject.SetActive(false);
         GameManager.Instance.NormalSpeed();
 
-        //fail option
-        OnEventFinishedSuccessful?.Invoke(true);
+        if (eventSuccess)
+            OnEventFinishedSuccessful?.Invoke(true);
+        else
+            OnEventFinishedSuccessful?.Invoke(false);
     }
 
 
@@ -98,6 +126,11 @@ public class MaskingMinigame : MonoBehaviour
     {
         //maxpadding - maxpadding * percent
         _uimask.padding = new Vector4(0f, 0f, _uiMaskMaxPadding - (_uiMaskMaxPadding * percent), 0f);
+    }
+
+    void SetTimerScale(float percent)
+    {
+        _timerCircle.fillAmount = percent;
     }
 
     #endregion
