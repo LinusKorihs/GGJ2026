@@ -27,6 +27,10 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] float _inputCooldownAfterUseEvent = 1f;
 
 
+    [SerializeField] DeathScreen _deathScreenObject;
+    [SerializeField] GameObject _deathUIGameObject;
+
+
     bool _inputsLocked = false;
     int _lockCount = 0;
     bool _onUseCooldown = false;
@@ -57,6 +61,21 @@ public class CharacterControllerScript : MonoBehaviour
         _actions.FindActionMap("Player").Disable();
     }
 
+
+    public void PlayDeathScene()
+    {
+        LockControls();
+        GameManager.Instance.AdjustNPCTimeSpeed(0.01f);
+
+        _deathScreenObject.gameObject.SetActive(true);
+
+        Vector3 lookDirection = _characterDirection == CharacterDirection.West
+         ? new Vector3(-1, 1, 1)
+         : Vector3.one;
+
+        _deathScreenObject.SetupDeathAnimation(_maskingSystem.CurrentMask, lookDirection);
+        _deathUIGameObject.SetActive(true);
+    }
 
 
     public void LockControls()
@@ -92,13 +111,13 @@ public class CharacterControllerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(_onUseCooldown)
+        if (_onUseCooldown)
         {
             _currentCooldown -= Time.deltaTime;
-            if(_currentCooldown <= 0f)
+            if (_currentCooldown <= 0f)
                 _onUseCooldown = false;
         }
-        
+
 
 
         Vector2 currentVelocity = _ownRigidbody.linearVelocity;

@@ -15,6 +15,7 @@ public class CharacterVisual : MonoBehaviour
 
     SpriteRenderer _characterSpriteRenderer;
 
+
     void Awake()
     {
         _characterSpriteRenderer = this.GetComponent<SpriteRenderer>();
@@ -26,12 +27,12 @@ public class CharacterVisual : MonoBehaviour
         {
             case CharacterControllerScript.CharacterDirection.West:
                 _characterSprite.localScale = new Vector3(-1, 1, 1);
-                 _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _eastWestSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.East:
                 _characterSprite.localScale = new Vector3(1, 1, 1);
-                  _characterSpriteRenderer.sprite = _eastWestSprite;
+                _characterSpriteRenderer.sprite = _eastWestSprite;
                 break;
 
             case CharacterControllerScript.CharacterDirection.South:

@@ -174,8 +174,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         }
         else
         {
-            
-            Debug.LogWarning("EVENT LOST! GAME OVER BRO!");
+            CharacterControllerScript.Instance.PlayDeathScene();
         }
     }
 
