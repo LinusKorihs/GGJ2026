@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 
@@ -18,6 +20,17 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] float _deathTextTargetScale = 6;
     [SerializeField] float _scalingPerTick = 0.05f;
 
+    [SerializeField] string _playerDeathText = "You died!!";
+    [SerializeField] string _correctKillText = "Correct Target\nYou Win!!";
+    [SerializeField] string _wrongKillText = "Wrong Target\nYou Loose!!";
+
+
+    public enum DeathVersion { Player, WrongKill, CorrectKill }
+
+    DeathVersion _deathVersion;
+
+    bool _isInDeathScene = false;
+
 
 
     public bool TESTINGTRIGGER = false;
@@ -27,13 +40,19 @@ public class DeathScreen : MonoBehaviour
         if (TESTINGTRIGGER)
         {
             TESTINGTRIGGER = false;
-            SetupDeathAnimation(null, CharacterControllerScript.CharacterDirection.East);
+            SetupDeathAnimation(null, CharacterControllerScript.CharacterDirection.East, DeathVersion.Player);
         }
 
     }
 
-    public void SetupDeathAnimation(MaskData maskData, CharacterControllerScript.CharacterDirection lookDirection)
+    public void SetupDeathAnimation(MaskData maskData, CharacterControllerScript.CharacterDirection lookDirection, DeathVersion deathVersion)
     {
+        if (_isInDeathScene)
+            return;
+
+
+        _isInDeathScene = true;
+        _deathVersion = deathVersion;
         _deathPrefab.SetActive(true);
         _deathCamera.SetActive(true);
 
@@ -107,7 +126,29 @@ public class DeathScreen : MonoBehaviour
 
     void ShowDeathText()
     {
+        string deathText;
+        switch (_deathVersion)
+        {
+            case DeathVersion.Player:
+                deathText = _playerDeathText;
+                break;
+
+            case DeathVersion.WrongKill:
+                deathText = _wrongKillText;
+                break;
+
+            case DeathVersion.CorrectKill:
+                deathText = _correctKillText;
+                break;
+
+            default:
+                deathText = _playerDeathText;
+                break;
+        }
+
+
         _deathTextGameObject.SetActive(true);
+        _deathTextGameObject.GetComponent<TextMeshProUGUI>().text = deathText;
         StartCoroutine(ScaleUpDeathText());
     }
 

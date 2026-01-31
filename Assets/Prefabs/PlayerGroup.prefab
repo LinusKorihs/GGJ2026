@@ -190,6 +190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8789553553110040911}
     m_Modifications:
+    - target: {fileID: 286314259785783391, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: m_Name
+      value: CharSprite
+      objectReference: {fileID: 0}
     - target: {fileID: 584405691944784952, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: _minigameCamera
       value: 

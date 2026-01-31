@@ -56,7 +56,7 @@ public class NPCPatience : MonoBehaviour
 
             if (debugLogs) Debug.LogWarning($"[NPCPatience:{name}] CAUGHT!", this);
 
-            CharacterControllerScript.Instance.PlayDeathScene();
+            CharacterControllerScript.Instance.PlayPlayerDeathScene();
             onCaught?.Invoke();
         }
     }

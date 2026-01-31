@@ -2,20 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
-public class MaskingSystem : MonoBehaviour, ITriggerReceiver
+public class ActionSystem : MonoBehaviour, ITriggerReceiver
 {
 
     public MaskData CurrentMask;
 
 
-    public bool CanStealMask
+    public bool TargetInRange
     {
         get { return _targetsInRange.Count > 0; }
-        private set { CanStealMask = value; }
+        private set { TargetInRange = value; }
     }
-
-    //public List<MaskData> StoredMasks;
 
 
 
@@ -122,12 +121,53 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
     }
     #endregion
 
+    #region Killing
+
+    public void TryKill()
+    {
+
+        //if noone in range, dont let him try
+        if (!TargetInRange)
+        {
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
+        }
+
+        //if target isnt killable, early out
+        if (!IsKillableTargetInRange())
+        {
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
+        }
+
+
+        if (_currentTarget.GetComponentInParent<KillTarget>().IsKillTarget)
+        {
+            CharacterControllerScript.Instance.PlayTargetDeathScene(DeathScreen.DeathVersion.CorrectKill, _currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            Debug.LogWarning("Win");
+            return;
+        }
+        else
+        {
+            CharacterControllerScript.Instance.PlayTargetDeathScene(DeathScreen.DeathVersion.WrongKill, _currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            Debug.LogWarning("Wrong Target killed - Lose");
+            return;
+        }
+
+    }
+
+    bool IsKillableTargetInRange()
+    {
+        return _currentTarget.tag == "VIP";
+    }
+    #endregion
+
     #region MaskStealing
 
     public void TryMaskStealing()
     {
-        //if we cant steal, dont let him try
-        if (!CanStealMask)
+        //if noone in range, dont let him try
+        if (!TargetInRange)
         {
             CharacterControllerScript.Instance.UnlockControls();
             return;
@@ -172,7 +212,7 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         }
         else
         {
-            CharacterControllerScript.Instance.PlayDeathScene();
+            CharacterControllerScript.Instance.PlayPlayerDeathScene();
         }
     }
 

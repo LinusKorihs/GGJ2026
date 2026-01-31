@@ -9,7 +9,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     [SerializeField]
     CharacterVisual _characterVisual;
-    [SerializeField] MaskingSystem _maskingSystem;
+    [SerializeField] ActionSystem _actionSystem;
 
     // TODO Set this depending on in which direction our model faces at start
     CharacterDirection _characterDirection = CharacterDirection.East;
@@ -41,6 +41,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     private InputAction _moveAction;
     private InputAction _useAction;
+    private InputAction _killAction;
 
     public static CharacterControllerScript Instance;
 
@@ -52,6 +53,9 @@ public class CharacterControllerScript : MonoBehaviour
         _moveAction = _actions.FindActionMap("Player").FindAction("Move");
         _useAction = _actions.FindActionMap("Player").FindAction("Jump");
         _useAction.performed += OnUseAction;
+
+        _killAction = _actions.FindActionMap("Player").FindAction("Interact");
+        _killAction.performed += OnKillAction;
     }
 
     void Start()
@@ -61,7 +65,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     void SetupCharacterVisuals()
     {
-        _characterVisual.AssignCharSprites(_maskingSystem.CurrentMask.MaskSprites);
+        _characterVisual.AssignCharSprites(_actionSystem.CurrentMask.MaskSprites);
     }
 
     void OnEnable()
@@ -74,14 +78,25 @@ public class CharacterControllerScript : MonoBehaviour
     }
 
 
-    public void PlayDeathScene()
+    public void PlayPlayerDeathScene()
     {
         LockControls();
         GameManager.Instance.AdjustNPCTimeSpeed(0.01f);
 
         _deathScreenObject.gameObject.SetActive(true);
 
-        _deathScreenObject.SetupDeathAnimation(_maskingSystem.CurrentMask, _characterDirection);
+        _deathScreenObject.SetupDeathAnimation(_actionSystem.CurrentMask, _characterDirection, DeathScreen.DeathVersion.Player);
+        _deathUIGameObject.SetActive(true);
+    }
+
+    public void PlayTargetDeathScene(DeathScreen.DeathVersion deathVersion, MaskData maskData)
+    {
+        LockControls();
+        GameManager.Instance.AdjustNPCTimeSpeed(0.01f);
+
+        _deathScreenObject.gameObject.SetActive(true);
+
+        _deathScreenObject.SetupDeathAnimation(maskData, _characterDirection, deathVersion);
         _deathUIGameObject.SetActive(true);
     }
 
@@ -106,7 +121,7 @@ public class CharacterControllerScript : MonoBehaviour
     private void OnUseAction(InputAction.CallbackContext context)
     {
         // Special case if we press space on Game Over 
-        if(GameManager.Instance.IsGameOver)
+        if (GameManager.Instance.IsGameOver)
             GameManager.Instance.GameOverPressed();
 
         if (_onUseCooldown)
@@ -117,7 +132,23 @@ public class CharacterControllerScript : MonoBehaviour
 
         LockControls();
 
-        _maskingSystem.TryMaskStealing();
+        _actionSystem.TryMaskStealing();
+    }
+
+
+    private void OnKillAction(InputAction.CallbackContext context)
+    {
+
+        // Special case if we press space on Game Over 
+        if (GameManager.Instance.IsGameOver)
+            GameManager.Instance.GameOverPressed();
+
+        if (_inputsLocked)
+            return;
+
+        LockControls();
+
+        _actionSystem.TryKill();
     }
 
 
