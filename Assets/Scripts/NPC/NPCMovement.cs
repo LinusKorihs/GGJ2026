@@ -36,7 +36,10 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] private string currentRoomId;
     [SerializeField] private WayPoint currentTarget;
     [SerializeField] public bool debugLogs = true;
+    [SerializeField] private bool isStaring = false;
 
+    private Vector3 savedDestination;
+    private bool hadSavedDestination;
     private Rigidbody2D rb;
     private float nextStationaryRollTime;
     private NavMeshAgent agent;
@@ -69,6 +72,7 @@ public class NPCMovement : MonoBehaviour
     private void Update()
     {
         ApplyForcedStateIfAny();
+        if (isStaring) return;
 
         if (state == NpcState.Stationary)
         {
@@ -111,6 +115,52 @@ public class NPCMovement : MonoBehaviour
             // Decide next target (maybe other room)
             PickNextTarget();
             return;
+        }
+    }
+
+    public void StartStare()
+    {
+        if (agent == null) return;
+        if (isStaring) return;
+
+        // Save current destination if any
+        hadSavedDestination = agent.hasPath;
+        if (hadSavedDestination)
+            savedDestination = agent.destination;
+
+        isStaring = true;
+
+        // Hard stop
+        agent.isStopped = true;
+        agent.ResetPath();
+
+        if (debugLogs) Debug.Log($"{name} START STARE (saved={hadSavedDestination})");
+    }
+
+    public void StopStare()
+    {
+        if (agent == null) return;
+        if (!isStaring) return;
+
+        isStaring = false;
+        agent.isStopped = false;
+
+        // Continue previous destination
+        if (hadSavedDestination)
+        {
+            if (!agent.isOnNavMesh)
+            {
+                if (debugLogs) Debug.LogWarning($"{name} not on NavMesh when resuming -> trying snap");
+                if (!TrySnapAgentToNavMesh()) return;
+            }
+
+            agent.SetDestination(savedDestination);
+            if (debugLogs) Debug.Log($"{name} STOP STARE -> resume {savedDestination}");
+        }
+        else
+        {
+            // If there was no path, just keep normal flow
+            if (debugLogs) Debug.Log($"{name} STOP STARE -> no saved dest, continuing normal");
         }
     }
 
