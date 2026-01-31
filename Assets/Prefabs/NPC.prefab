@@ -142,6 +142,7 @@ MonoBehaviour:
   currentRoomId: 1
   currentTarget: {fileID: 0}
   debugLogs: 1
+  isStaring: 0
 --- !u!114 &2882868519694540733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,13 +434,13 @@ MonoBehaviour:
   onPlayerSeen:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 518821346456950514}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 4078006655855721912}
+        m_TargetAssemblyTypeName: NPCMovement, Assembly-CSharp
+        m_MethodName: StartStare
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -447,7 +448,19 @@ MonoBehaviour:
         m_CallState: 2
   onPlayerLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4078006655855721912}
+        m_TargetAssemblyTypeName: NPCMovement, Assembly-CSharp
+        m_MethodName: StopStare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   debugLogs: 1
 --- !u!114 &8425102608018867264
 MonoBehaviour:
