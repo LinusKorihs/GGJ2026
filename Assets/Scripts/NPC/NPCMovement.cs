@@ -116,7 +116,7 @@ public class NPCMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.NPCTimeChanged += adjustSpeed;
+        //GameManager.Instance.NPCTimeChanged += adjustSpeed;
     }
 
     private void adjustSpeed(float speed)
@@ -127,7 +127,7 @@ public class NPCMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.Instance.NPCTimeChanged -= adjustSpeed;
+        //GameManager.Instance.NPCTimeChanged -= adjustSpeed;
     }
 
     private void ApplyForcedStateIfAny()

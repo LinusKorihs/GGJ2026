@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef305a3777f8e4041b1b22796de9da2a
+guid: 5337930d7bfbd744eb92c313303402b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5427291976445804591
-    second: NPC_01_0
+      213: 446955973089272727
+    second: TriangleShape_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,53 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPC_01_0
+      name: TriangleShape_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 768
+        x: 2
+        y: 35
+        width: 508
+        height: 440
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f20416c2c4d915b40800000000000000
-      internalID: 5427291976445804591
+      spriteID: 793a936e618e33600800000000000000
+      internalID: 446955973089272727
       vertices: []
       indices: 
       edges: []
@@ -151,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 079d7f634a2ff0b4c96934f45216fe41
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NPC_01_0: 5427291976445804591
+      TriangleShape_0: 446955973089272727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
