@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,13 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 {
 
     public MaskData CurrentMask;
+
+
+    public bool CanStealMask
+    {
+        get { return _targetsInRange.Count > 0; }
+        private set { CanStealMask = value; }
+    }
 
     //public List<MaskData> StoredMasks;
 
@@ -21,20 +29,15 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
 
     [Header("Technical Stuff - Dont touch")]
     [SerializeField] LayerMask _validLayerForCollision;
+    [SerializeField]
+    MaskingMinigame _maskingMinigame;
+
+    Coroutine _minigameCoroutine;
+
+    bool _maskingMinigameRunning = false;
 
 
 
-
-    public void EquipMask(MaskData mask)
-    {
-        CurrentMask = mask;
-        ApplyMaskEffects(mask);
-    }
-
-    void ApplyMaskEffects(MaskData mask)
-    {
-        _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
-    }
 
     void Update()
     {
@@ -42,6 +45,8 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         if (_targetsInRange.Count > 1)
             RecalculateTarget();
     }
+
+    #region Targeting
 
     public void RemoteTriggerEnter2D(Collider2D collision)
     {
@@ -71,6 +76,8 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
         {
             _currentTarget = null;
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), null);
+            // no target , disable ui
+            _maskingVisuals.SetUseActionHint(false);
             return;
         }
 
@@ -97,6 +104,9 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
             UpdateTargetVisual(null, _currentTarget.GetComponent<MaskGiver>());
         else
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), _currentTarget.GetComponent<MaskGiver>());
+
+        // new target , enable ui
+        _maskingVisuals.SetUseActionHint(true);
     }
 
     void UpdateTargetVisual(MaskGiver oldTarget, MaskGiver newTarget)
@@ -112,4 +122,77 @@ public class MaskingSystem : MonoBehaviour, ITriggerReceiver
             newTarget.UpdateHighlighterVisuals(true);
 
     }
+    #endregion
+
+    #region MaskStealing
+
+    public void TryMaskStealing()
+    {
+        //if we cant steal, dont let him try
+        if (!CanStealMask)
+        {
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
+        }
+
+
+        //early out if coroutine is already running. Should prevent double usage!
+        if (_minigameCoroutine != null)
+        {
+            CharacterControllerScript.Instance.UnlockControls();
+            return;
+        }
+
+        _minigameCoroutine = StartCoroutine(StartMinigame());
+    }
+
+    IEnumerator StartMinigame()
+    {
+        //register event finish callback before we start the event // starts listening
+        _maskingMinigame.OnEventFinishedSuccessful += MinigameFinishedCallback;
+        _maskingMinigame.StartStealingMinigame(_currentTarget);
+        _maskingMinigameRunning = true;
+
+        //will run forever until we get the callback. Non blocking though since its coroutine
+        while (_maskingMinigameRunning)
+        {
+            yield return null;
+        }
+
+        //register event finish callback before after the event is done // stop listening
+        _maskingMinigame.OnEventFinishedSuccessful -= MinigameFinishedCallback;
+        _minigameCoroutine = null;
+    }
+
+    void MinigameFinishedCallback(bool success)
+    {
+        if (success)
+        {
+            _maskingMinigameRunning = false;
+            EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            CharacterControllerScript.Instance.UnlockControls();
+        }
+        else
+        {
+            
+            Debug.LogWarning("EVENT LOST! GAME OVER BRO!");
+        }
+    }
+
+
+    public void EquipMask(MaskData mask)
+    {
+        CurrentMask = mask;
+        ApplyMaskEffects(mask);
+    }
+
+    void ApplyMaskEffects(MaskData mask)
+    {
+        CharacterControllerScript.Instance.SetCharacterSprite(CurrentMask.maskSprite);
+        _maskingVisuals.UpdateVisuals(mask.screenTint, mask.shouldTintScreen);
+    }
+
+
+
+    #endregion
 }
