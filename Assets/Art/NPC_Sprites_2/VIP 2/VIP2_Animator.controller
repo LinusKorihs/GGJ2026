@@ -45,7 +45,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3bf03864e894c83478d4e8e6fcae9062, type: 2}
+  m_Motion: {fileID: 7400000, guid: b22397324efaf3040a5c13273982c79f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -96,7 +96,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 96bedcf181703964389b25fb5e41a430, type: 2}
+  m_Motion: {fileID: 7400000, guid: da35d8dd7c06f9648b9b99fadff7fa17, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -223,7 +223,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VIP_Animator
+  m_Name: VIP2_Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: GoRight
@@ -289,7 +289,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fdc11d360e3837f429dc99ea42f1f05c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 05639e9678c05e248be05149c4a0f6c9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -340,7 +340,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 843980bad0a5280479c96d7d43320760, type: 2}
+  m_Motion: {fileID: 7400000, guid: 56b1b65361635ec4991c223b6eaf1037, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

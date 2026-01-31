@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
+  m_Name: MaskVIP3
+  m_EditorClassIdentifier: Assembly-CSharp::MaskData
+  MaskId: VIP3
+  MaskSprites:
+    NSprite: {fileID: -4374126147807635837, guid: 27d37ed982efe5846a70f80ba37bddd8, type: 3}
+    SSprite: {fileID: 2725383181674018441, guid: f6d33546fd2da144289b1914ea3e2e08, type: 3}
+    ESprite: {fileID: -7064081868553852179, guid: cd89b5126b72a4148941fc8670c90b53, type: 3}
+    WSprite: {fileID: -7172785023097974059, guid: 3e03b96965a9d154cb404439999de909, type: 3}
+  HighlightSprites:
+    NSprite: {fileID: -750020120146214444, guid: 1a9d7208af8066948a4e603e28243d06, type: 3}
+    SSprite: {fileID: -347525200027937570, guid: bd513b0dbb8bae540ba4e221b1cc8164, type: 3}
+    ESprite: {fileID: -8561657565019092644, guid: 76e3e5acaaf529c41a0aa3db56c8bc2e, type: 3}
+    WSprite: {fileID: -8561657565019092644, guid: 76e3e5acaaf529c41a0aa3db56c8bc2e, type: 3}
+  WalkingController: {fileID: 9100000, guid: f29b43c055c27ec4ba240f9bb787d79c, type: 2}
+  ScreenTint: {r: 0.8681651, g: 0.9245283, b: 0.07413671, a: 0.3882353}
+  ShouldTintScreen: 1
