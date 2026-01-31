@@ -41,6 +41,7 @@ public class NPCMovement : MonoBehaviour
 <<<<<<< Updated upstream
     private Vector3 savedDestination;
     private bool hadSavedDestination;
+    public System.Action<NpcState> NPCStateChanged;
 =======
     public System.Action<NpcState> NPCStateChanged;
 >>>>>>> Stashed changes
