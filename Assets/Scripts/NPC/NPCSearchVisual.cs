@@ -60,7 +60,6 @@ public class NPCSearchVisual : MonoBehaviour
     void CheckDistanceToPlayer()
     {
         float distanceToPlayer = Vector3.Distance(this.transform.position, CharacterControllerScript.Instance.transform.position);
-        Debug.Log(distanceToPlayer);
         if (distanceToPlayer >= _distanceToToggleVisuals && visualsOn)
             ToggleSearchVisuals(false);
         else if (distanceToPlayer <= _distanceToToggleVisuals && !visualsOn)

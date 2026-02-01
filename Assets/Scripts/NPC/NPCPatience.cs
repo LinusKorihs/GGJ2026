@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,6 +26,8 @@ public class NPCPatience : MonoBehaviour
     public float Normalized => Mathf.Approximately(patienceMax, 0f) ? 0f : Mathf.Clamp01(patience / patienceMax);
     public bool HasCaught => hasCaught;
 
+    [SerializeField] List<MaskData> friendlyMasks = new List<MaskData>();
+
     private void Awake()
     {
         if (vision == null) vision = GetComponentInChildren<NPCVision>();
@@ -35,6 +38,9 @@ public class NPCPatience : MonoBehaviour
     {
         if (hasCaught) return;
         if (vision == null) return;
+
+        if (PlayerHasFriendlyMask())
+            return;
 
         bool seeing = vision.IsSeeingPlayer;
         float dt = Time.deltaTime;
@@ -59,5 +65,16 @@ public class NPCPatience : MonoBehaviour
             CharacterControllerScript.Instance.PlayPlayerDeathScene();
             onCaught?.Invoke();
         }
+    }
+
+
+    bool PlayerHasFriendlyMask()
+    {
+        //if player mask is recognized as friendly, dont lose patience
+        MaskData playerMask = CharacterControllerScript.Instance.GetEquippedMask();
+        if (friendlyMasks.Contains(playerMask))
+            return true;
+        else
+            return false;
     }
 }

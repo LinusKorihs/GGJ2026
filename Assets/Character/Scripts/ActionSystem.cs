@@ -211,7 +211,7 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
         if (success)
         {
             _maskingMinigameRunning = false;
-            EquipMask(_currentTarget.GetComponent<MaskGiver>().CarriedMask);
+            EquipMask(_currentTarget.GetComponentInParent<MaskGiver>().CarriedMask);
             CharacterControllerScript.Instance.UnlockControls();
         }
         else

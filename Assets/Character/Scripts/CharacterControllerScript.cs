@@ -63,6 +63,12 @@ public class CharacterControllerScript : MonoBehaviour
         SetupCharacterVisuals();
     }
 
+
+    public MaskData GetEquippedMask()
+    {
+        return _actionSystem.CurrentMask;
+    }
+
     void SetupCharacterVisuals()
     {
         _characterVisual.AssignCharSprites(_actionSystem.CurrentMask.MaskSprites);
