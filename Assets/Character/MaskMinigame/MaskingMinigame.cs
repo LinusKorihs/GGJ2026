@@ -137,11 +137,11 @@ public class MaskingMinigame : MonoBehaviour
 
     IEnumerator MoveCursor()
     {
-
         while (true)
         {
             int moveRight = _cursorMoveRight ? 1 : -1;
-            _cursorGameObject.transform.localPosition += new Vector3(_cursorSpeed * moveRight *Time.deltaTime, 0, 0);
+            float dt = Time.unscaledDeltaTime;
+            _cursorGameObject.transform.localPosition += new Vector3(_cursorSpeed * moveRight * dt, 0, 0);
             //if we are out right, turn around
 
             if (_cursorMoveRight && _cursorGameObject.transform.localPosition.x >= (_cursorMinPos * -1))
