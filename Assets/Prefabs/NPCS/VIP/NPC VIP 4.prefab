@@ -80,6 +80,17 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: -8160800540540998532}
   m_SourcePrefab: {fileID: 100100000, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+--- !u!114 &3651826981143783438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4816247210291502833, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+  m_PrefabInstance: {fileID: 8105171028535621375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becb7b545b9092943bed65eba1b33f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskHolder
 --- !u!1 &8595229150503231501 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 518821346456950514, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
@@ -98,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillTarget
   IsKillTarget: 0
+  OwnMaskGiver: {fileID: 3651826981143783438}
