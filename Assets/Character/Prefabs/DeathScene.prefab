@@ -72,7 +72,7 @@ MonoBehaviour:
   _bottomSprite: {fileID: 6840638392920227007}
   _ownAnimation: {fileID: 6876698844899944235}
   _deathTextGameObject: {fileID: 0}
-  _deathTextTargetScale: 5
+  _deathTextTargetScale: 4.5
   _scalingPerTick: 0.1
   _playerDeathText: You died!!
   _correctKillText: 'Correct Target
