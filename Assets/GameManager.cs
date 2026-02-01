@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public bool TESTNPCSPEED = false;
 
     public bool IsGameOver;
-  
+
+    public bool IsGameWon = false;
+
 
     void Awake()
     {
@@ -56,7 +58,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOverPressed()
     {
-        _gameOverLoading.LoadGameOver();
+        if (IsGameWon)
+            _gameOverLoading.LoadGameWon();
+        else
+            _gameOverLoading.LoadGameOver();
     }
 
 

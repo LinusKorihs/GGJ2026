@@ -13,12 +13,10 @@ public class KillTargetRandomizer : MonoBehaviour
 
     public static KillTargetRandomizer Instance;
 
-
     void Awake()
     {
         if (Instance == null)
             Instance = this;
-
 
         TargetHint = "ERROR";
 
@@ -33,6 +31,4 @@ public class KillTargetRandomizer : MonoBehaviour
         TargetHint = _acutalKillTarget.OwnMaskGiver.CarriedMask.MaskId;
 
     }
-
-
 }

@@ -8,4 +8,14 @@ public class GameOverLoading : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
+
+    public void LoadGameWon()
+    {
+        SceneManager.LoadScene("GameWon");
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }
