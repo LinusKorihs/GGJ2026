@@ -280,32 +280,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 2869
-        y: 409
-        width: 1
-        height: 1
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0698ddb392f7ae780800000000000000
-      internalID: -8652963918964225696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_3
       rect:
         serializedVersion: 2
-        x: 2497
+        x: 446
         y: 0
         width: 327
         height: 410
@@ -349,7 +327,7 @@ TextureImporter:
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_25
       rect:
         serializedVersion: 2
-        x: 442
+        x: 1270
         y: 0
         width: 327
         height: 410
@@ -371,7 +349,7 @@ TextureImporter:
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_36
       rect:
         serializedVersion: 2
-        x: 35
+        x: 1685
         y: 0
         width: 327
         height: 410
@@ -393,7 +371,7 @@ TextureImporter:
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_38
       rect:
         serializedVersion: 2
-        x: 2084
+        x: 2086
         y: 0
         width: 327
         height: 410
@@ -415,7 +393,7 @@ TextureImporter:
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_42
       rect:
         serializedVersion: 2
-        x: 1690
+        x: 2495
         y: 0
         width: 327
         height: 410
@@ -437,12 +415,12 @@ TextureImporter:
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1274
+        x: 35
         y: 0
         width: 327
         height: 410
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
