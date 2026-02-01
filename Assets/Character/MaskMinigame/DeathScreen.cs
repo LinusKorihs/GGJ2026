@@ -23,6 +23,8 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] string _playerDeathText = "You died!!";
     [SerializeField] string _correctKillText = "Correct Target\nYou Win!!";
     [SerializeField] string _wrongKillText = "Wrong Target\nYou Loose!!";
+    [SerializeField] AudioSource __ownAudioSource;
+    [SerializeField] AudioClip _deathSound;
 
 
     public enum DeathVersion { Player, WrongKill, CorrectKill }
@@ -65,6 +67,7 @@ public class DeathScreen : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         StartParticles();
+        PlayDeathSound();
         yield return new WaitForSeconds(0.3f);
         StartAnimation();
         yield return new WaitForSeconds(0.3f);
@@ -146,7 +149,7 @@ public class DeathScreen : MonoBehaviour
 
             default:
                 deathText = _playerDeathText;
-                  GameManager.Instance.IsGameWon = false;
+                GameManager.Instance.IsGameWon = false;
                 break;
         }
 
@@ -166,6 +169,11 @@ public class DeathScreen : MonoBehaviour
             _deathTextGameObject.transform.localScale.z + _scalingPerTick);
         }
         GameManager.Instance.IsGameOver = true;
+    }
+
+    void PlayDeathSound()
+    {
+        __ownAudioSource.PlayOneShot(_deathSound);
     }
 
 
