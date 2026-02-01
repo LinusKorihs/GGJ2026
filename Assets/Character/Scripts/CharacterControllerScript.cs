@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -210,7 +209,7 @@ public class CharacterControllerScript : MonoBehaviour
         return input.normalized;
     }
 
-    public void UpdateAnimator(AnimatorController animator)
+    public void UpdateAnimator(RuntimeAnimatorController animator)
     {
         _characterVisual.SetNewAnimator(animator);
     }
