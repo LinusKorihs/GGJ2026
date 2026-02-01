@@ -107,6 +107,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   debugLogs: 0
+  friendlyMasks: []
 --- !u!195 &1806494839729260029
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -432,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Visuals
       objectReference: {fileID: 0}
+    - target: {fileID: 6372887906447735309, guid: 3f3f1958af316fd4c874ca59931ad2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -450,6 +455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3771631462558249981}
     m_Modifications:
+    - target: {fileID: 1187606419481137231, guid: 867f9617f7ebbe4439ab964404bdc6c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1212427015373211676, guid: 867f9617f7ebbe4439ab964404bdc6c2, type: 3}
       propertyPath: vision
       value: 
@@ -461,6 +470,10 @@ PrefabInstance:
     - target: {fileID: 2812709987422284755, guid: 867f9617f7ebbe4439ab964404bdc6c2, type: 3}
       propertyPath: m_Name
       value: SearchVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812709987422284755, guid: 867f9617f7ebbe4439ab964404bdc6c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2845967589742835344, guid: 867f9617f7ebbe4439ab964404bdc6c2, type: 3}
       propertyPath: m_Pivot.x

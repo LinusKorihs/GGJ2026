@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterVisual : MonoBehaviour
@@ -48,7 +47,7 @@ public class CharacterVisual : MonoBehaviour
 
     }
 
-    public void SetNewAnimator(AnimatorController animator)
+    public void SetNewAnimator(RuntimeAnimatorController animator)
     {
         _ownAnimator.runtimeAnimatorController = animator;
     }

@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class NPCVisuals : MonoBehaviour
@@ -68,7 +67,7 @@ public class NPCVisuals : MonoBehaviour
         _characterStillSpriteRenderer.sprite = _ownMaskGiver.CarriedMask.MaskSprites.ESprite;
     }
 
-    public void SetNewAnimator(AnimatorController animator)
+    public void SetNewAnimator(RuntimeAnimatorController animator)
     {
         _ownAnimator.runtimeAnimatorController = animator;
     }

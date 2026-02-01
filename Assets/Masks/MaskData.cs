@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,6 +10,8 @@ public class CharSprites
 }
 
 [CreateAssetMenu(menuName = "Game/Mask")]
+
+[System.Serializable]
 public class MaskData : ScriptableObject
 {
 
@@ -20,7 +21,7 @@ public class MaskData : ScriptableObject
     public CharSprites MaskSprites;
     public CharSprites HighlightSprites;
 
-    public AnimatorController WalkingController;
+    public RuntimeAnimatorController WalkingController;
 
     public Color ScreenTint = Color.clear;
 

@@ -2186,7 +2186,7 @@ MonoBehaviour:
   _targetGameObject: {fileID: 6319744397904246792}
   _eventDuration: 5
   _cursorMinPos: -350
-  _cursorSpeed: 10
+  _cursorSpeed: 5000
   _gainPerHit: 0.1
   _perfectHitFactor: 5
   _hitmarkerSpeed: 1

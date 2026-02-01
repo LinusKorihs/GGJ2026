@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 public class ActionSystem : MonoBehaviour, ITriggerReceiver
 {
@@ -30,6 +28,9 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
     [SerializeField] LayerMask _validLayerForCollision;
     [SerializeField]
     MaskingMinigame _maskingMinigame;
+
+    [SerializeField] bool _canShapeshiftVIP = false;
+
 
     Coroutine _minigameCoroutine;
 
@@ -103,8 +104,12 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
         else
             UpdateTargetVisual(oldTarget.GetComponent<MaskGiver>(), _currentTarget.GetComponent<MaskGiver>());
 
-        // new target , enable ui
+
         _maskingVisuals.SetUseActionHint(true);
+        
+        // new target , enable ui
+        if (_currentTarget.tag == "VIP" && !_canShapeshiftVIP)
+            _maskingVisuals.SetUseActionHint(false);
 
         if (_currentTarget.tag == "VIP")
             _maskingVisuals.SetUseKillHint(true);
@@ -176,6 +181,8 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
             CharacterControllerScript.Instance.UnlockControls();
             return;
         }
+
+
 
 
         //early out if coroutine is already running. Should prevent double usage!
