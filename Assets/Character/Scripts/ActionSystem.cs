@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActionSystem : MonoBehaviour, ITriggerReceiver
 {
@@ -30,6 +31,8 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
     [SerializeField] LayerMask _validLayerForCollision;
     [SerializeField]
     MaskingMinigame _maskingMinigame;
+
+    [SerializeField] float _maskEquippingDelay = 0.5f;
 
     [SerializeField] bool _canShapeshiftVIP = false;
 
@@ -222,13 +225,23 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
         if (success)
         {
             _maskingMinigameRunning = false;
-            EquipMask(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask);
+            //needed for animation
+            _maskingVisuals.PlayShapeShiftingAnim();
+            StartCoroutine(EquipMaskDelayed(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask));
+            //EquipMask(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask);
             CharacterControllerScript.Instance.UnlockControls();
         }
         else
         {
             CharacterControllerScript.Instance.PlayPlayerDeathScene();
         }
+    }
+
+
+    IEnumerator EquipMaskDelayed(MaskData maskData)
+    {
+        yield return new WaitForSeconds(_maskEquippingDelay);
+        EquipMask(maskData);
     }
 
 
