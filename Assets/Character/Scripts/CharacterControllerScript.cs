@@ -32,6 +32,7 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] GameObject _deathUIGameObject;
 
 
+
     bool _inputsLocked = false;
     int _lockCount = 0;
     bool _onUseCooldown = false;
