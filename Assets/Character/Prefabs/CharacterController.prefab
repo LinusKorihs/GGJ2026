@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1471,8 +1471,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03657016, y: 0.02089721}
-  m_Size: {x: 0.8970471, y: 1.2612151}
+  m_Offset: {x: -0.014646351, y: -0.4023496}
+  m_Size: {x: 0.5024183, y: 0.5024183}
   m_Direction: 0
 --- !u!1 &6191851377607405297
 GameObject:
@@ -2164,6 +2164,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   _maskingMinigame: {fileID: 584405691944784952}
+  _canShapeshiftVIP: 0
 --- !u!114 &584405691944784952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,7 +2188,7 @@ MonoBehaviour:
   _eventDuration: 5
   _cursorMinPos: -350
   _cursorSpeed: 5000
-  _gainPerHit: 0.1
+  _gainPerHit: 0.2
   _perfectHitFactor: 5
   _hitmarkerSpeed: 1
   _hitCooldown: 0.25
