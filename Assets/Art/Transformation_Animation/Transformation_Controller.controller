@@ -158,7 +158,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Transform_animation
-  m_Speed: 0.25
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 324480411396569310}
@@ -171,7 +171,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 85a242ae2c36dd746bae94ae246139dd, type: 2}
+  m_Motion: {fileID: 7400000, guid: b760c77238256974c9a742b0e7886b30, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

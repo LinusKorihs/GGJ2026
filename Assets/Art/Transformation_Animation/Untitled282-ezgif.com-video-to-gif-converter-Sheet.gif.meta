@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 801469cdd22c0234dbfb9a803f6878ee
+guid: d06b249716a0b2c4cb4172ca1dd61671
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -176,15 +176,6 @@ TextureImporter:
   - first:
       213: 7113324892544570608
     second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_57
-  - first:
-      213: 1810560647363577998
-    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_58
-  - first:
-      213: 6125089511530082983
-    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_59
-  - first:
-      213: -8148314617883427459
-    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_60
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -280,12 +271,78 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0698ddb392f7ae780800000000000000
+      internalID: -8652963918964225696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28752068e420f8a0800000000000000
+      internalID: -6273473700463019986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e928834b5049d20800000000000000
+      internalID: 3284256299860270648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_3
       rect:
         serializedVersion: 2
-        x: 446
+        x: 1230
         y: 0
-        width: 327
+        width: 410
         height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -302,12 +359,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_14
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_4
       rect:
         serializedVersion: 2
-        x: 860
+        x: 1640
         y: 0
-        width: 327
+        width: 410
         height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -317,19 +374,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30d12027ea61136d0800000000000000
-      internalID: -3012601737241289469
+      spriteID: fb7d709c7db13f9a0800000000000000
+      internalID: -6200581648354388033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_25
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1270
+        x: 2050
         y: 0
-        width: 327
+        width: 410
         height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -339,19 +396,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acccd2dc449169210800000000000000
-      internalID: 1339285722480102602
+      spriteID: 08e727b4c40f6bed0800000000000000
+      internalID: -2398465541054235008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_36
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1685
+        x: 2460
         y: 0
-        width: 327
+        width: 410
         height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -361,74 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b910b128cee50a80800000000000000
-      internalID: -8501126178265884235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_38
-      rect:
-        serializedVersion: 2
-        x: 2086
-        y: 0
-        width: 327
-        height: 410
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2712109cc5b1e9b40800000000000000
-      internalID: 5448822684488114546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_42
-      rect:
-        serializedVersion: 2
-        x: 2495
-        y: 0
-        width: 327
-        height: 410
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 80b6492800f0eb140800000000000000
-      internalID: 4737240352905521928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 0
-        width: 327
-        height: 410
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb51016aebe04294183060f565baceb9
-      internalID: -6273473700463019986
+      spriteID: e52823d76f1deb720800000000000000
+      internalID: 2863957269646836318
       vertices: []
       indices: 
       edges: []
@@ -437,7 +428,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a0bb9f1b5cb4074b9befcf7f4331d4d
+    spriteID: 06b4b67957f3c5840953036739b0eb1f
     internalID: 0
     vertices: []
     indices: 
@@ -445,70 +436,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":410.0,"y":410.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_0: -8652963918964225696
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_1: -6273473700463019986
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_10: -2637510891855759794
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_11: -4092302341792492568
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_12: 2850418594245451828
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_13: -8540441951456194755
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_14: -3012601737241289469
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_15: -3792308293110145109
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_16: 3693882231093844049
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_17: -4985991892572060950
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_18: 6989912635978243143
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_19: -3899906948899024501
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_2: 3284256299860270648
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_20: 8203095378528203783
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_21: -8643571468080402585
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_22: -7510587698170941278
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_23: -3357684868465243618
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_24: -1665725769440703230
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_25: 1339285722480102602
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_26: 3169851543198872500
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_27: 2343684025707228785
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_28: -1185805250536254585
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_29: 1591238255568325673
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_3: -4553652209673646282
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_30: -8572970615238721020
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_31: 796338759521034098
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_32: -5922671455558121316
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_33: 1916014196284348868
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_34: -2002951363877251762
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_35: -7678974019353790707
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_36: -8501126178265884235
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_37: 4410269144236410199
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_38: 5448822684488114546
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_39: -340573779896988063
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_4: -6200581648354388033
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_40: 1302286374746609143
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_41: 3359331627215374876
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_42: 4737240352905521928
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_43: -8177803327836452433
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_44: -8270766755447444188
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_45: -7508242151180290814
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_46: -740619899209218338
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_47: 5828985486072770097
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_48: 8371391824671069157
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_49: 3583999049376908285
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_5: -2398465541054235008
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_50: -7405284127561071686
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_51: 2787855578725344791
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_52: 1520499839791031636
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_53: 7172201326780730549
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_54: 2974379293916470288
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_55: 4885294085667489468
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_56: 1283744579297551873
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_57: 7113324892544570608
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_58: 1810560647363577998
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_59: 6125089511530082983
       Untitled282-ezgif.com-video-to-gif-converter-Sheet_6: 2863957269646836318
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_60: -8148314617883427459
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_61: 1214836323
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_7: -707748477754009720
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_8: -1970761662199217925
-      Untitled282-ezgif.com-video-to-gif-converter-Sheet_9: 3591558079363538679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
