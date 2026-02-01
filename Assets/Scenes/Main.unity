@@ -168,6 +168,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4920025582210820199, guid: 590371355da01c14f96489b31287d297, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920025582210820199, guid: 590371355da01c14f96489b31287d297, type: 3}
       propertyPath: friendlyMasks.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -372,6 +376,10 @@ PrefabInstance:
     - target: {fileID: 965898399717643759, guid: e7f5782609d18ca4bbc1e1ff300043e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116299713254667990, guid: e7f5782609d18ca4bbc1e1ff300043e4, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6311024862593012947, guid: e7f5782609d18ca4bbc1e1ff300043e4, type: 3}
       propertyPath: allWaypoints.Array.size
@@ -645,6 +653,10 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 2043378828}
+    - target: {fileID: 8784004868194012315, guid: ff8352811e3611f4d89b90326e74c605, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 140
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14504,6 +14516,10 @@ PrefabInstance:
       value: NPC Red Variant 2
       objectReference: {fileID: 0}
     - target: {fileID: 7094810602853719990, guid: abed483fa1f9aba4da7443ab4bd55bfe, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094810602853719990, guid: abed483fa1f9aba4da7443ab4bd55bfe, type: 3}
       propertyPath: friendlyMasks.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -15106,6 +15122,10 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[18]'
       value: 
       objectReference: {fileID: 30254898}
+    - target: {fileID: 8605816637355570910, guid: 523a5eee74185ad40ae9e4d1ee625e1e, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 8605816637355570910, guid: 523a5eee74185ad40ae9e4d1ee625e1e, type: 3}
       propertyPath: friendlyMasks.Array.size
       value: 3
@@ -35957,6 +35977,10 @@ PrefabInstance:
       value: NPC Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7094810602853719990, guid: abed483fa1f9aba4da7443ab4bd55bfe, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094810602853719990, guid: abed483fa1f9aba4da7443ab4bd55bfe, type: 3}
       propertyPath: friendlyMasks.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -36109,6 +36133,10 @@ PrefabInstance:
     - target: {fileID: 1017885200286305118, guid: 590371355da01c14f96489b31287d297, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920025582210820199, guid: 590371355da01c14f96489b31287d297, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4920025582210820199, guid: 590371355da01c14f96489b31287d297, type: 3}
       propertyPath: friendlyMasks.Array.size
@@ -46879,6 +46907,10 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 2043378828}
+    - target: {fileID: 6375227621221574978, guid: bfeb35e17ab6db142b0b267513fe7218, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 8595229150503231501, guid: bfeb35e17ab6db142b0b267513fe7218, type: 3}
       propertyPath: m_Name
       value: NPC VIP 4
@@ -47047,6 +47079,10 @@ PrefabInstance:
       propertyPath: 'allWaypoints.Array.data[18]'
       value: 
       objectReference: {fileID: 30254898}
+    - target: {fileID: 8605816637355570910, guid: 523a5eee74185ad40ae9e4d1ee625e1e, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 8605816637355570910, guid: 523a5eee74185ad40ae9e4d1ee625e1e, type: 3}
       propertyPath: friendlyMasks.Array.size
       value: 3
@@ -47343,6 +47379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC VIP 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3281933387195276157, guid: fbd0699706889874eb61fee85f2fd851, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 4404021057493481848, guid: fbd0699706889874eb61fee85f2fd851, type: 3}
       propertyPath: allWaypoints.Array.size
       value: 4
@@ -47611,6 +47651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC VIP 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7422348586611557195, guid: 384fbf424884cd541ae6509f4f13575c, type: 3}
+      propertyPath: patienceGainPerSecond
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 8616659739769774414, guid: 384fbf424884cd541ae6509f4f13575c, type: 3}
       propertyPath: allWaypoints.Array.size
       value: 4
@@ -47704,10 +47748,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5369121601228811806, guid: e5a8bb61fed59f7438e2352dcb832bce, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8789553553110040911, guid: e5a8bb61fed59f7438e2352dcb832bce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.34
