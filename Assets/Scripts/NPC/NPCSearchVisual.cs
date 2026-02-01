@@ -28,6 +28,10 @@ public class NPCSearchVisual : MonoBehaviour
 
     public Vector3 scaleObj = new Vector3(0.45f, 0.45f, 1f);
 
+    [SerializeField] GameObject _searchVisualGameObject;
+    [SerializeField] float _distanceToToggleVisuals = 25f;
+    bool visualsOn = false;
+
     [Header("Debug")]
     public bool debugLogs = false;
 
@@ -49,6 +53,24 @@ public class NPCSearchVisual : MonoBehaviour
         if (rotateWithFacing) ApplyRotation();
 
         ApplyPatienceReveal();
+
+        CheckDistanceToPlayer();
+    }
+
+    void CheckDistanceToPlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(this.transform.position, CharacterControllerScript.Instance.transform.position);
+        if (distanceToPlayer >= _distanceToToggleVisuals && visualsOn)
+            ToggleSearchVisuals(false);
+        else if (distanceToPlayer <= _distanceToToggleVisuals && !visualsOn)
+            ToggleSearchVisuals(true);
+    }
+
+
+    void ToggleSearchVisuals(bool value)
+    {
+        visualsOn=value;
+        _searchVisualGameObject.SetActive(value);
     }
 
     private void ApplyFovScale()

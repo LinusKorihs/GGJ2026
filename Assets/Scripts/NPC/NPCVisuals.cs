@@ -10,13 +10,13 @@ public class NPCVisuals : MonoBehaviour
     [SerializeField]
     SpriteRenderer _characterAnimationSpriteRenderer;
 
-    CharacterControllerScript.CharacterDirection _npcDirection;
+    [SerializeField] CharacterControllerScript.CharacterDirection _npcDirection;
 
     [SerializeField] Animator _ownAnimator;
 
     NPCMovement _ownMovement;
 
-    CharacterControllerScript.CharacterDirection _oldDirection;
+    CharacterControllerScript.CharacterDirection _oldDirection = CharacterControllerScript.CharacterDirection.East;
     bool _isInWalkingAnim;
 
 
@@ -29,6 +29,7 @@ public class NPCVisuals : MonoBehaviour
 
         _ownMovement.NPCStateChanged += NPCStateChanged;
         SetNewAnimator(_ownMaskGiver.CarriedMask.WalkingController);
+        ChangeNPCSprite();
     }
 
     void NPCStateChanged(NPCMovement.NpcState state)

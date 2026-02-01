@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC VIP 2
       objectReference: {fileID: 0}
+    - target: {fileID: 518821346456950514, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+      propertyPath: m_TagString
+      value: VIP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902537148794782781, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+      propertyPath: m_TagString
+      value: VIP
+      objectReference: {fileID: 0}
     - target: {fileID: 3800280456704902633, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -26,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4e390d0ae6e39af45925c57eacd3525f, type: 2}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.497784
+      value: 2.4195526
       objectReference: {fileID: 0}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.890694
+      value: -7.998704
       objectReference: {fileID: 0}
     - target: {fileID: 7090127769920568452, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67,5 +75,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 518821346456950514, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 5719759961189804973}
   m_SourcePrefab: {fileID: 100100000, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+--- !u!1 &196748706412532274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 518821346456950514, guid: 10e000e4d8117474c9cb9d49971f27f4, type: 3}
+  m_PrefabInstance: {fileID: 399066250565141696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5719759961189804973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196748706412532274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2b130bb89b3ce4f825ea5bfb09265c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillTarget
+  IsKillTarget: 0

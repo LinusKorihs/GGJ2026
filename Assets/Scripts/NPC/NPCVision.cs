@@ -42,6 +42,7 @@ public class NPCVision : MonoBehaviour
     private NavMeshAgent agent;
     private Vector2 currentFacing;
 
+
     public bool IsSeeingPlayer => isSeeingPlayer;
 
     private void Awake()
