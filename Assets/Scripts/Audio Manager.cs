@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        // Für jeden Sound eine eigene AudioSource-Komponente erstellen
+        // FÃ¼r jeden Sound eine eigene AudioSource-Komponente erstellen
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -26,6 +26,11 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
+            s.source.spatialBlend = s.spatialBlend;
+            s.source.minDistance = s.minDistance;
+            s.source.maxDistance = s.maxDistance;
+            s.source.rolloffMode = AudioRolloffMode.Linear;
         }
     }
 
@@ -37,31 +42,36 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " nicht gefunden!");
             return;
         }
+        s.source.Stop();
         s.source.Play();
     }
 
-    public void PlayAtPosition(string name, Vector3 position)
+    public AudioSource PlayAttached(string name, Transform parent, bool restart = true)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) return;
+        if (s == null || s.clip == null)
+        {
+            Debug.LogWarning($"[AudioManager] Sound '{name}' nicht gefunden oder Clip fehlt.");
+            return null;
+        }
 
-        // Erstellt ein temporäres Objekt für den Sound an der Position
-        GameObject tempGO = new GameObject("TempAudio_" + name);
-        tempGO.transform.position = position;
-        AudioSource source = tempGO.AddComponent<AudioSource>();
+        // Eine Source direkt am Ballroom-Objekt erzeugen (oder wiederverwenden)
+        AudioSource src = parent.GetComponent<AudioSource>();
+        if (src == null) src = parent.gameObject.AddComponent<AudioSource>();
 
-        // Einstellungen vom Sound-Objekt übernehmen
-        source.clip = s.clip;
-        source.volume = s.volume;
-        source.pitch = s.pitch;
-        source.spatialBlend = s.spatialBlend;
-        source.minDistance = s.minDistance;
-        source.maxDistance = s.maxDistance;
-        source.rolloffMode = AudioRolloffMode.Linear; // Gleichmäßiges Leiserwerden
+        src.clip = s.clip;
+        src.volume = s.volume;
+        src.pitch = s.pitch;
+        src.loop = s.loop;
 
-        source.Play();
+        src.spatialBlend = s.spatialBlend;   // muss > 0 sein fÃ¼r Distance
+        src.minDistance = s.minDistance;
+        src.maxDistance = s.maxDistance;
+        src.rolloffMode = AudioRolloffMode.Linear;
 
-        // Objekt zerstören, wenn der Sound fertig ist
-        Destroy(tempGO, s.clip.length);
+        if (restart) src.Stop();
+        if (!src.isPlaying) src.Play();
+
+        return src;
     }
 }
