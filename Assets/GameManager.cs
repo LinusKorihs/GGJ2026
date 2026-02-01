@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
             _gameOverLoading.LoadGameWon();
         else
             _gameOverLoading.LoadGameOver();
+
+        IsGameOver = false;
     }
 
 
