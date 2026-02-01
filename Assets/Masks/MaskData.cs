@@ -10,6 +10,8 @@ public class CharSprites
 }
 
 [CreateAssetMenu(menuName = "Game/Mask")]
+
+[System.Serializable]
 public class MaskData : ScriptableObject
 {
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
   m_Name: MaskVIP4
   m_EditorClassIdentifier: Assembly-CSharp::MaskData
-  MaskId: VIP4
+  MaskId: Green
   MaskSprites:
     NSprite: {fileID: -1075649372140747161, guid: 00a61a1c633e3e544976a73b62799c82, type: 3}
     SSprite: {fileID: -527181374131050080, guid: 9af7af2432a9b164387bbf372f928a42, type: 3}
