@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: _minigameCamera
       value: 
       objectReference: {fileID: 657503072004552140}
+    - target: {fileID: 3743914716458043162, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5453240633494039486, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: m_ClearFlags
       value: 2
