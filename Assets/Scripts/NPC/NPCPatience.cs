@@ -47,7 +47,7 @@ public class NPCPatience : MonoBehaviour
 
         float before = patience;
 
-        if (seeing) patience += patienceGainPerSecond * dt;
+        if (seeing) patience += patienceGainPerSecond * dt * GameManager.Instance.NPCTime;
         else if (patience > 0f) patience -= patienceLossPerSecond * dt;
 
         patience = Mathf.Clamp(patience, 0f, patienceMax);
