@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7743408285636506171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037019681537741373, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518937760014839491, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7008114790919712277, guid: 55feb45e882aa194f91e1727e506b26f, type: 3}
+    - target: {fileID: 3518937760014839491, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234053079570544431, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}
+      propertyPath: m_Name
+      value: NoEntrySign Garden Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db4bbbe1efefe7d41b3d5658ca69319a, type: 3}

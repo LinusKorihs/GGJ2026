@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53dfcdcd837b9c46aab9ed7502aab30, type: 3}
+  m_Name: MaskWaiter
+  m_EditorClassIdentifier: Assembly-CSharp::MaskData
+  MaskId: Waiter
+  MaskSprites:
+    NSprite: {fileID: -7584660682991692577, guid: 109f6f104cafdce4099040d30dfa9579, type: 3}
+    SSprite: {fileID: -1003271809836610321, guid: 2c1fd05578d5ee547b1d97e3552b2275, type: 3}
+    ESprite: {fileID: 7976745898443285709, guid: 7dcb6114d7826e048b9c7bd16f008d4d, type: 3}
+    WSprite: {fileID: 618731397406889505, guid: 6234421bdb8ec13499527575959c44ff, type: 3}
+  HighlightSprites:
+    NSprite: {fileID: -4547904059155830789, guid: c1a776b78c3f7ba438445cff7bad4fff, type: 3}
+    SSprite: {fileID: 6265002981181144478, guid: df5178161402b864ca568a76332a8a2d, type: 3}
+    ESprite: {fileID: -7001095618818121528, guid: 6519153b3157e43498d662c3daf920e6, type: 3}
+    WSprite: {fileID: -7165514945624424907, guid: 82cf48282e46d2d4e81ead3912a64ee8, type: 3}
+  WalkingController: {fileID: 9100000, guid: 182dc4fa301a6844ea3d4ab2bf2a3c4f, type: 2}
+  ScreenTint: {r: 0.43833613, g: 0.4433962, b: 0.37019402, a: 0.3882353}
+  ShouldTintScreen: 1

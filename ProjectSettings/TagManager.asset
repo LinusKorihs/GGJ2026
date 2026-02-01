@@ -2,8 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - MiniGameCamera
+  - VIP
   layers:
   - Default
   - TransparentFX
@@ -12,15 +14,15 @@ TagManager:
   - Water
   - UI
   - 
+  - Ground
+  - NPC
+  - 
+  - MaskTarget
   - 
   - 
+  - Player
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MeshLayer
   - 
   - 
   - 
@@ -41,3 +43,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SceneSort1
+    uniqueID: 3878142145
+    locked: 0
+  - name: SceneSort2
+    uniqueID: 3095916043
+    locked: 0
+  - name: Overdraw
+    uniqueID: 4008980303
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  - SceneLayer1
+  - SceneLayer2
