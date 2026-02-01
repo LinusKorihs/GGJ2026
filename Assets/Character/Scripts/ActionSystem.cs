@@ -22,6 +22,8 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
 
     List<GameObject> _targetsInRange = new List<GameObject>();
     GameObject _currentTarget;
+    GameObject _targetAtMinigameStart;
+
 
 
     [Header("Technical Stuff - Dont touch")]
@@ -199,7 +201,9 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
     {
         //register event finish callback before we start the event // starts listening
         _maskingMinigame.OnEventFinishedSuccessful += MinigameFinishedCallback;
-        _maskingMinigame.StartStealingMinigame(_currentTarget);
+        //assign this, so we dont lose the target, if we get a recalculation during minigame
+        _targetAtMinigameStart = _currentTarget;
+        _maskingMinigame.StartStealingMinigame(_targetAtMinigameStart);
         _maskingMinigameRunning = true;
 
         //will run forever until we get the callback. Non blocking though since its coroutine
@@ -218,7 +222,7 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
         if (success)
         {
             _maskingMinigameRunning = false;
-            EquipMask(_currentTarget.GetComponentInParent<MaskGiver>().CarriedMask);
+            EquipMask(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask);
             CharacterControllerScript.Instance.UnlockControls();
         }
         else

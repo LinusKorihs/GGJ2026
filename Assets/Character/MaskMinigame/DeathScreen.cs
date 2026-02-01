@@ -131,18 +131,22 @@ public class DeathScreen : MonoBehaviour
         {
             case DeathVersion.Player:
                 deathText = _playerDeathText;
+                GameManager.Instance.IsGameWon = false;
                 break;
 
             case DeathVersion.WrongKill:
                 deathText = _wrongKillText;
+                GameManager.Instance.IsGameWon = false;
                 break;
 
             case DeathVersion.CorrectKill:
                 deathText = _correctKillText;
+                GameManager.Instance.IsGameWon = true;
                 break;
 
             default:
                 deathText = _playerDeathText;
+                  GameManager.Instance.IsGameWon = false;
                 break;
         }
 

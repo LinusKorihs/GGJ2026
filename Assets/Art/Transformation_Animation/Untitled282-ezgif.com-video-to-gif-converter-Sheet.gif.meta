@@ -1,0 +1,538 @@
+fileFormatVersion: 2
+guid: 801469cdd22c0234dbfb9a803f6878ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8652963918964225696
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_0
+  - first:
+      213: -6273473700463019986
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_1
+  - first:
+      213: 3284256299860270648
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_2
+  - first:
+      213: -4553652209673646282
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_3
+  - first:
+      213: -6200581648354388033
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_4
+  - first:
+      213: -2398465541054235008
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_5
+  - first:
+      213: 2863957269646836318
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_6
+  - first:
+      213: -707748477754009720
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_7
+  - first:
+      213: -1970761662199217925
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_8
+  - first:
+      213: 3591558079363538679
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_9
+  - first:
+      213: -2637510891855759794
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_10
+  - first:
+      213: -4092302341792492568
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_11
+  - first:
+      213: 2850418594245451828
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_12
+  - first:
+      213: -8540441951456194755
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_13
+  - first:
+      213: -3012601737241289469
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_14
+  - first:
+      213: -3792308293110145109
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_15
+  - first:
+      213: 3693882231093844049
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_16
+  - first:
+      213: -4985991892572060950
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_17
+  - first:
+      213: 6989912635978243143
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_18
+  - first:
+      213: -3899906948899024501
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_19
+  - first:
+      213: 8203095378528203783
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_20
+  - first:
+      213: -8643571468080402585
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_21
+  - first:
+      213: -7510587698170941278
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_22
+  - first:
+      213: -3357684868465243618
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_23
+  - first:
+      213: -1665725769440703230
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_24
+  - first:
+      213: 1339285722480102602
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_25
+  - first:
+      213: 3169851543198872500
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_26
+  - first:
+      213: 2343684025707228785
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_27
+  - first:
+      213: -1185805250536254585
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_28
+  - first:
+      213: 1591238255568325673
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_29
+  - first:
+      213: -8572970615238721020
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_30
+  - first:
+      213: 796338759521034098
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_31
+  - first:
+      213: -5922671455558121316
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_32
+  - first:
+      213: 1916014196284348868
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_33
+  - first:
+      213: -2002951363877251762
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_34
+  - first:
+      213: -7678974019353790707
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_35
+  - first:
+      213: -8501126178265884235
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_36
+  - first:
+      213: 4410269144236410199
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_37
+  - first:
+      213: 5448822684488114546
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_38
+  - first:
+      213: -340573779896988063
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_39
+  - first:
+      213: 1302286374746609143
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_40
+  - first:
+      213: 3359331627215374876
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_41
+  - first:
+      213: 4737240352905521928
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_42
+  - first:
+      213: -8177803327836452433
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_43
+  - first:
+      213: -8270766755447444188
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_44
+  - first:
+      213: -7508242151180290814
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_45
+  - first:
+      213: -740619899209218338
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_46
+  - first:
+      213: 5828985486072770097
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_47
+  - first:
+      213: 8371391824671069157
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_48
+  - first:
+      213: 3583999049376908285
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_49
+  - first:
+      213: -7405284127561071686
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_50
+  - first:
+      213: 2787855578725344791
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_51
+  - first:
+      213: 1520499839791031636
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_52
+  - first:
+      213: 7172201326780730549
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_53
+  - first:
+      213: 2974379293916470288
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_54
+  - first:
+      213: 4885294085667489468
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_55
+  - first:
+      213: 1283744579297551873
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_56
+  - first:
+      213: 7113324892544570608
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_57
+  - first:
+      213: 1810560647363577998
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_58
+  - first:
+      213: 6125089511530082983
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_59
+  - first:
+      213: -8148314617883427459
+    second: Untitled282-ezgif.com-video-to-gif-converter-Sheet_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 409
+        width: 1
+        height: 1
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0698ddb392f7ae780800000000000000
+      internalID: -8652963918964225696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63fcabb017d2ec0c0800000000000000
+      internalID: -4553652209673646282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d12027ea61136d0800000000000000
+      internalID: -3012601737241289469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acccd2dc449169210800000000000000
+      internalID: 1339285722480102602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b910b128cee50a80800000000000000
+      internalID: -8501126178265884235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2084
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2712109cc5b1e9b40800000000000000
+      internalID: 5448822684488114546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b6492800f0eb140800000000000000
+      internalID: 4737240352905521928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled282-ezgif.com-video-to-gif-converter-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 0
+        width: 327
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb51016aebe04294183060f565baceb9
+      internalID: -6273473700463019986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4a0bb9f1b5cb4074b9befcf7f4331d4d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_0: -8652963918964225696
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_1: -6273473700463019986
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_10: -2637510891855759794
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_11: -4092302341792492568
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_12: 2850418594245451828
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_13: -8540441951456194755
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_14: -3012601737241289469
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_15: -3792308293110145109
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_16: 3693882231093844049
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_17: -4985991892572060950
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_18: 6989912635978243143
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_19: -3899906948899024501
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_2: 3284256299860270648
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_20: 8203095378528203783
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_21: -8643571468080402585
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_22: -7510587698170941278
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_23: -3357684868465243618
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_24: -1665725769440703230
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_25: 1339285722480102602
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_26: 3169851543198872500
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_27: 2343684025707228785
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_28: -1185805250536254585
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_29: 1591238255568325673
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_3: -4553652209673646282
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_30: -8572970615238721020
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_31: 796338759521034098
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_32: -5922671455558121316
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_33: 1916014196284348868
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_34: -2002951363877251762
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_35: -7678974019353790707
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_36: -8501126178265884235
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_37: 4410269144236410199
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_38: 5448822684488114546
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_39: -340573779896988063
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_4: -6200581648354388033
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_40: 1302286374746609143
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_41: 3359331627215374876
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_42: 4737240352905521928
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_43: -8177803327836452433
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_44: -8270766755447444188
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_45: -7508242151180290814
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_46: -740619899209218338
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_47: 5828985486072770097
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_48: 8371391824671069157
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_49: 3583999049376908285
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_5: -2398465541054235008
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_50: -7405284127561071686
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_51: 2787855578725344791
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_52: 1520499839791031636
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_53: 7172201326780730549
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_54: 2974379293916470288
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_55: 4885294085667489468
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_56: 1283744579297551873
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_57: 7113324892544570608
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_58: 1810560647363577998
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_59: 6125089511530082983
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_6: 2863957269646836318
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_60: -8148314617883427459
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_61: 1214836323
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_7: -707748477754009720
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_8: -1970761662199217925
+      Untitled282-ezgif.com-video-to-gif-converter-Sheet_9: 3591558079363538679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
