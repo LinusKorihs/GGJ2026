@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9161242003016945209}
   - component: {fileID: 6375005745284176832}
-  - component: {fileID: 2148790976219060423}
   - component: {fileID: 2154310134509110137}
   m_Layer: 0
   m_Name: GameManager
@@ -49,20 +48,10 @@ MonoBehaviour:
   NPCTime: 1
   _slowSpeed: 0.01
   _normalSpeed: 1
+  _loadingScript: {fileID: 0}
   TESTNPCSPEED: 0
   IsGameOver: 0
---- !u!114 &2148790976219060423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7818800464619431192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65f11dcaeae9fb7478fef7ceae43cc96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoading
+  IsGameWon: 0
 --- !u!114 &2154310134509110137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,3 +70,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  TargetHint: 

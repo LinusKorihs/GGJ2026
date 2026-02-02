@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float _normalSpeed = 1f;
 
+    
+    [SerializeField]
+    GameOverLoading _loadingScript;
+
 
     public Action<float> NPCTimeChanged;
     public bool TESTNPCSPEED = false;
@@ -27,9 +31,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if (Instance == null) Instance = this;
-
-
-        _gameOverLoading = this.GetComponent<GameOverLoading>();
     }
 
     void Update()
@@ -59,9 +60,9 @@ public class GameManager : MonoBehaviour
     public void GameOverPressed()
     {
         if (IsGameWon)
-            _gameOverLoading.LoadGameWon();
+            _loadingScript.LoadGameWon();
         else
-            _gameOverLoading.LoadGameOver();
+            _loadingScript.LoadGameOver();
 
         IsGameOver = false;
     }

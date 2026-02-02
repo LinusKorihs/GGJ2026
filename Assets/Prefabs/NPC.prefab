@@ -286,7 +286,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  debugLogs: 1
+  debugLogs: 0
 --- !u!114 &8425102608018867264
 MonoBehaviour:
   m_ObjectHideFlags: 0

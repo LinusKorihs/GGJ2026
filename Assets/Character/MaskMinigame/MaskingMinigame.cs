@@ -154,7 +154,7 @@ public class MaskingMinigame : MonoBehaviour
                 _cursorMoveRight = true;
             }
 
-            yield return new WaitForSeconds(0.02f);
+            yield return null;
 
         }
     }

@@ -111,7 +111,7 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
 
 
         _maskingVisuals.SetUseActionHint(true);
-        
+
         // new target , enable ui
         if (_currentTarget.tag == "VIP" && !_canShapeshiftVIP)
             _maskingVisuals.SetUseActionHint(false);
@@ -131,8 +131,10 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
 
         //do nothing if we dont have a new target
         if (newTarget != null)
+        {
             //else do highlight for new target
             newTarget.UpdateHighlighterVisuals(true);
+        }
 
     }
     #endregion
@@ -229,7 +231,6 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
             _maskingVisuals.PlayShapeShiftingAnim();
             StartCoroutine(EquipMaskDelayed(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask));
             //EquipMask(_targetAtMinigameStart.GetComponentInParent<MaskGiver>().CarriedMask);
-            CharacterControllerScript.Instance.UnlockControls();
         }
         else
         {
@@ -241,6 +242,8 @@ public class ActionSystem : MonoBehaviour, ITriggerReceiver
     IEnumerator EquipMaskDelayed(MaskData maskData)
     {
         yield return new WaitForSeconds(_maskEquippingDelay);
+        //moved Control unlocks after masking animation done
+        CharacterControllerScript.Instance.UnlockControls();
         EquipMask(maskData);
     }
 

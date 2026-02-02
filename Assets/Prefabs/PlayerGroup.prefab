@@ -304,6 +304,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8789553553110040911}
     m_Modifications:
     - target: {fileID: 584405691944784952, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
+      propertyPath: _cursorSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 584405691944784952, guid: 66a8d764b4e14d24692f64fca93b40bd, type: 3}
       propertyPath: _minigameCamera
       value: 
       objectReference: {fileID: 657503072004552140}
